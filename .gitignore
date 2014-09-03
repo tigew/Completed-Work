@@ -3,6 +3,7 @@
 ###Folders###
 
 ###Files###
+*.dSYM
 
 ### C++ ###
 # Compiled Object files
