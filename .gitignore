@@ -1,10 +1,5 @@
 # Created by http://www.gitignore.io
 
-###Folders###
-
-###Files###
-*.dSYM
-
 ### C++ ###
 # Compiled Object files
 *.slo
@@ -67,10 +62,13 @@ Temporary Items
 #sftp configuration file
 sftp-config.json
 
+###User Created###
+
+###Folders###
+
+###Files###
+*.dSYM
 Assignments/Assignment 1/assignment_1
-
 labs/1/lab_1
-
 labs/2/lab_2
-
 labs/3/lab_3
