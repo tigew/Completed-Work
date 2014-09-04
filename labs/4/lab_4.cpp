@@ -152,18 +152,20 @@ double StringToDouble(string value) {
  */
 bool StringToBool(string value) {
   // CODE HERE
-  if (value.empty()) {
-    return false;
-  }
-  value = value.at(0);
   bool bool_return;
+  if (!value.empty()) {
 
-  if (value == "t" || value == "T") {
-    bool_return = true;
-  } else if (value == "f" || value == "F") {
-    bool_return = false;
+    value = value.at(0);
+
+    if (value == "t" || value == "T") {
+      bool_return = true;
+    } else if (value == "f" || value == "F") {
+      bool_return = false;
+    } else {
+      bool_return = false;
+    }
   } else {
-    bool_return = false;
+    return false;
   }
 
   return bool_return;
