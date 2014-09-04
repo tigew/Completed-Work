@@ -218,7 +218,8 @@ char GetCharacter(string input, int char_index) {
   // CODE HERE
   char letter = ' ';
   unsigned int new_char_index = static_cast<unsigned int>(char_index);
-  if (new_char_index > input.length() || 0 > char_index) {
+  // Check fo null
+  if (new_char_index >= input.length() || 0 > char_index) {
       return '\0';
   }
   letter = static_cast<char>(input.at(char_index));
