@@ -53,8 +53,6 @@ void CountCharacters(string input, int &is_alpha, int &is_numeric) {
       is_alpha++;
     } else if (isdigit(test_char)) {
       is_numeric++;
-    } else {
-      cout << "What the fuck did you enter?";
     }
   }
 }
