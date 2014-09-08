@@ -72,7 +72,6 @@ string UpAndDown(string input) {
 
   for (unsigned int i = 0; i < input.length(); i++) {
     // Checks if even or odd, to change case
-    // Make sure to ask luke why this is printing
     if (i % 2 == 0) {
       input.at(i) = toupper(static_cast<char>(input.at(i)));
     } else {
