@@ -29,6 +29,8 @@ int Maximum(int num_array[], int limit);
 
 // Program Execution Starts Here
 int main() {
+  // Look at average for example function call
+  int foo[5] = {16, 2, 77, 40, 12071};
   // This ends program execution
   return 0;
 }
