@@ -31,7 +31,7 @@ int main() {
   CountCharacters("Tester123", is_alpha, is_numeric);
   cout << "# of alpha characters in 'Tester123' " << is_alpha << endl;
   cout << "# of numeric characters in 'Tester123' " << is_numeric << endl;
-  cout << "'Hello World' mutated " << UpAndDown("Hello World") << endl;
+  cout << "'Hello World' mutated " << UpAndDown("HelloWorld") << endl;
   cout << "Number of words in 'Hello World' "
        << CountWords("Hello World") << endl;
   cout << "Average of 16, 2, 77, 40, 12071 (non floating) is "
