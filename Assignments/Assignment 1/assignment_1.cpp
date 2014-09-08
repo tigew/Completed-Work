@@ -30,7 +30,7 @@ int Maximum(int num_array[], int limit);
 // Program Execution Starts Here
 int main() {
   // This ends program execution
-  UpAndDown("abc");
+  UpAndDown("Thisisthetestdunctionpleasedonotbreak");
   return 0;
 }
 
@@ -71,12 +71,12 @@ void CountCharacters(string input, int &is_alpha, int &is_numeric) {
  */
 string UpAndDown(string input) {
 
-  for (unsigned int i = 0; i < input.length(); ++i) {
+  for (unsigned int i = 0; i < input.length(); i++) {
     // Checks if even or odd, to change case
-    if (input[i] % 2 == 0) {
-      input[i] = putchar(tolower(input[i]));
-    } else {
+    if (i % 2 == 0) {
       input[i] = putchar(toupper(input[i]));
+    } else {
+      input[i] = putchar(tolower(input[i]));
     }
   }
   return input;
