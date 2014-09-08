@@ -24,7 +24,6 @@ int Maximum(int num_array[], int limit);
 
 // Program Execution Starts Here
 int main() {
-
   int is_alpha = 0;
   int is_numeric = 0;
   int foo[5] = {16, 2, 77, 40, 12071};
@@ -55,7 +54,6 @@ int main() {
  * @return Nothing 
  */
 void CountCharacters(string input, int &is_alpha, int &is_numeric) {
-
   char test_char = ' ';
   is_alpha = 0;
   is_numeric = 0;
@@ -81,7 +79,6 @@ void CountCharacters(string input, int &is_alpha, int &is_numeric) {
  *                  second letter lowercase, third capital and so on.
  */
 string UpAndDown(string input) {
-
   for (unsigned int i = 0; i < input.length(); i++) {
     // Checks if even or odd, to change case
     if (i % 2 == 0) {
@@ -104,7 +101,6 @@ string UpAndDown(string input) {
  *                     string
  */
 int CountWords(string input) {
-
   int num_words = 0;
   // If it contains at least one word + 1
   if (input.length() > 0) {
@@ -177,6 +173,3 @@ int Maximum(int num_array[], int limit) {
   }
   return largest_num;
 }
-
-
-
