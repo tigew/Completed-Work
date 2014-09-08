@@ -30,7 +30,6 @@ int Maximum(int num_array[], int limit);
 // Program Execution Starts Here
 int main() {
   // Look at average for example function call
-  int foo[5] = {16, 2, 77, 40, 12071};
   // This ends program execution
   return 0;
 }
@@ -138,9 +137,13 @@ int Average(int num_array[], int limit) {
  * @return int - The samllest number contained in the array
  */
 int Minimum(int num_array[], int limit) {
-  cout << num_array[0];
-  cout << limit;
-  return 0;
+  int smallest_num = num_array[0];
+  for (int i = 0; i < limit; i++) {
+    if (num_array[i] < smallest_num) {
+      smallest_num = num_array[i];
+    }
+  }
+  return smallest_num;
 }
 
 /*
@@ -152,9 +155,13 @@ int Minimum(int num_array[], int limit) {
  * @return int - The largest number contained in the array
  */
 int Maximum(int num_array[], int limit) {
-  cout << num_array[0];
-  cout << limit;
-  return 0;
+  int largest_num = num_array[0];
+  for (int i = 0; i < limit; i++) {
+    if (num_array[i] > largest_num) {
+      largest_num = num_array[i];
+    }
+  }
+  return largest_num;
 }
 
 
