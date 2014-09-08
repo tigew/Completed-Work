@@ -20,7 +20,7 @@ using std::ios_base;
 using std::boolalpha;
 
 // Function Prototypes (DO NOT ALTER)
-void CountCharacters(string &input, int &is_alpha, int &is_numeric);
+void CountCharacters(string input, int &is_alpha, int &is_numeric);
 string UpAndDown(string input);
 int CountWords(string input);
 int Average(int num_array[], int limit);
@@ -37,15 +37,26 @@ int main() {
  * This function will count the number of alphabetic characters and the 
  * number of numeric characters in a string.
  * @uses
- * @param string &input - The input string to itterate
+ * @param string input - The input string to itterate
  * @param int &is_alpha - The store of alpha chars
  * @param int &is_numeric - The store of numeric chars
  * @return Nothing 
  */
-void CountCharacters(string &input, int &is_alpha, int &is_numeric) {
-  cout << is_alpha;
-  cout << input;
-  cout << is_numeric;
+void CountCharacters(string input, int &is_alpha, int &is_numeric) {
+  char test_char = ' ';
+  is_alpha = 0;
+  is_numeric = 0;
+  for (unsigned int i = 0; i < input.length(); i++) {
+    test_char = input.at(i);
+
+    if (isalpha(test_char)) {
+      is_alpha++;
+    } else if (isdigit(test_char)) {
+      is_numeric++;
+    } else {
+      cout << "What the fuck did you enter?";
+    }
+  }
 }
 
 /*
