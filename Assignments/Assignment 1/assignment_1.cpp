@@ -30,7 +30,6 @@ int Maximum(int num_array[], int limit);
 // Program Execution Starts Here
 int main() {
   // This ends program execution
-  cout << CountWords("") << endl;
   return 0;
 }
 
@@ -95,10 +94,12 @@ string UpAndDown(string input) {
 int CountWords(string input) {
 
   int num_words = 0;
-
+  // If it contains at least one word + 1
   if (input.length() > 0) {
     num_words++;
   }
+  // Count spaces beyond that for word count
+  // This would not work if leading and ending spaces were included
   for (unsigned int i = 0; i < input.length(); ++i) {
     if (input.at(i) == ' ') {
       num_words++;
@@ -116,9 +117,14 @@ int CountWords(string input) {
  * @return int - The average of the values in the array.
  */
 int Average(int num_array[], int limit) {
-  cout << num_array[0];
-  cout << limit;
-  return 0;
+  // Average(foo, (sizeof(foo)/sizeof(*foo))); example function call
+  int total = 0;
+  int average = 0;
+  for (int i = 0; i < limit; i++) {
+    total += num_array[i];
+  }
+  average = total / limit;
+  return average;
 }
 
 /*
