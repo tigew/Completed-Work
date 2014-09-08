@@ -30,7 +30,6 @@ int Maximum(int num_array[], int limit);
 // Program Execution Starts Here
 int main() {
   // This ends program execution
-  UpAndDown("Thisisthetestdunctionpleasedonotbreak");
   return 0;
 }
 
@@ -75,9 +74,9 @@ string UpAndDown(string input) {
     // Checks if even or odd, to change case
     // Make sure to ask luke why this is printing
     if (i % 2 == 0) {
-      input.at(i) = putchar(toupper(input.at(i)));
+      input.at(i) = toupper(static_cast<char>(input.at(i)));
     } else {
-      input.at(i) = putchar(tolower(input.at(i)));
+      input.at(i) = tolower(static_cast<char>(input.at(i)));
     }
   }
   return input;
