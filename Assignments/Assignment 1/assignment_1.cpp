@@ -30,6 +30,7 @@ int Maximum(int num_array[], int limit);
 // Program Execution Starts Here
 int main() {
   // This ends program execution
+  cout << CountWords("") << endl;
   return 0;
 }
 
@@ -92,8 +93,18 @@ string UpAndDown(string input) {
  *                     string
  */
 int CountWords(string input) {
-  cout << input;
-  return 0;
+
+  int num_words = 0;
+
+  if (input.length() > 0) {
+    num_words++;
+  }
+  for (unsigned int i = 0; i < input.length(); ++i) {
+    if (input.at(i) == ' ') {
+      num_words++;
+    }
+  }
+  return num_words;
 }
 
 /* 
