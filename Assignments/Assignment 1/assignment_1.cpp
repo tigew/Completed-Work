@@ -30,6 +30,7 @@ int Maximum(int num_array[], int limit);
 // Program Execution Starts Here
 int main() {
   // This ends program execution
+  UpAndDown("abc");
   return 0;
 }
 
@@ -43,12 +44,14 @@ int main() {
  * @return Nothing 
  */
 void CountCharacters(string input, int &is_alpha, int &is_numeric) {
+
   char test_char = ' ';
   is_alpha = 0;
   is_numeric = 0;
+
   for (unsigned int i = 0; i < input.length(); i++) {
     test_char = input.at(i);
-
+    // Checks if alpha or numeric, and counts accordingly
     if (isalpha(test_char)) {
       is_alpha++;
     } else if (isdigit(test_char)) {
@@ -67,8 +70,16 @@ void CountCharacters(string input, int &is_alpha, int &is_numeric) {
  *                  second letter lowercase, third capital and so on.
  */
 string UpAndDown(string input) {
-  cout << input;
-  return "";
+
+  for (unsigned int i = 0; i < input.length(); ++i) {
+    // Checks if even or odd, to change case
+    if (input[i] % 2 == 0) {
+      input[i] = putchar(tolower(input[i]));
+    } else {
+      input[i] = putchar(toupper(input[i]));
+    }
+  }
+  return input;
 }
 
 /* 
