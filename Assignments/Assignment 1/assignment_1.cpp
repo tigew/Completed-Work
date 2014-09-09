@@ -35,11 +35,11 @@ int main() {
   cout << "Number of words in 'Hello World' "
        << CountWords("Hello World") << endl;
   cout << "Average of 16, 2, 77, 40, 12071 (non floating) is "
-       << Average(foo, (sizeof(foo)/sizeof(*foo))) << "." << endl;
+       << Average(foo, 5) << "." << endl;
   cout << "Minimum of 16, 2, 77, 40, 12071 (non floating) is "
-       << Minimum(foo, (sizeof(foo)/sizeof(*foo))) << "." << endl;
+       << Minimum(foo, 5) << "." << endl;
   cout << "Maximum of 16, 2, 77, 40, 12071 (non floating) is "
-       << Maximum(foo, (sizeof(foo)/sizeof(*foo))) << "." << endl;
+       << Maximum(foo, 5) << "." << endl;
   // This ends program execution
   return 0;
 }
