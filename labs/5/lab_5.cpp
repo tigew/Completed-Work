@@ -1,6 +1,6 @@
 /*
  * Name        : lab_5.cpp
- * Author      : FILL IN
+ * Author      : Travis Peebles
  * Description : Practising Functions
  */
 
@@ -23,7 +23,7 @@ using std::string;
  * Display "Hello world!" to stdout (no newline character after)
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-
+void Hello();
 /*
  * function name: PrintMessage
  * parameters: string message (const call-by-reference)
@@ -33,7 +33,7 @@ using std::string;
  * Display message to stdout (no newline character after)
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-
+void PrintMessage(const string &message);
 /*
  * function name: GetAnswer
  * parameters: none
@@ -43,7 +43,7 @@ using std::string;
  * Return the value 42
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-
+int GetAnswer();
 /*
  * function name: FindLarger
  * parameters: int (const call-by-reference), int (const call-by-reference)
@@ -54,7 +54,7 @@ using std::string;
  * if the values are equivalent.
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-
+int FindLarger(const int &num_a, const int &num_b);
 /*
  * function name: GetStats
  * parameters: string (const call-by-reference), int (call-by-reference),
@@ -68,7 +68,7 @@ using std::string;
  * characters in the first parameter (string)
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-
+int GetStats(const string &input, int &upper_num, int &lower_num);
 /*
  * function name: BuildMessage
  * parameters: string (const call-by-reference), bool (const call-by-reference)
@@ -82,7 +82,7 @@ using std::string;
  * "Message: empty".
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-
+string BuildMessage(const string &input = "", const bool &to_upper = false);
 
 // For testing (DO NOT ALTER)
 #include <cctype>
@@ -103,8 +103,54 @@ int main() {
 }
 
 // CODE HERE (FUNCTION DEFINITIONS)
+void Hello() {
+  cout << "Hello world!";
+}
 
+void PrintMessage(const string &message) {
+  cout << message;
+}
 
+int GetAnswer() {
+  return 42;
+}
+
+int FindLarger(const int &num_a, const int &num_b) {
+  int num_return = 0;
+  if (num_a >= num_b) {
+    num_return = num_a;
+  } else {
+    num_return = num_b;
+  }
+  return num_return;
+}
+
+int GetStats(const string &input, int &upper_num, int &lower_num) {
+  int num_return = input.length();
+  upper_num = 0;
+  lower_num = 0;
+  for (unsigned int i = 0; i < input.length(); ++i) {
+    if (isupper(static_cast<char>(input.at(i)))) {
+      upper_num++;
+    } else if (islower(static_cast<char>(input.at(i)))) {
+      lower_num++;
+    }
+  }
+  return num_return;
+}
+
+string BuildMessage(const string &input, const bool &to_upper) {
+  string string_return = input;
+  if (string_return.empty()) {
+    string_return = "empty";
+  }
+  if (to_upper == true) {
+    for (unsigned int i = 0; i < string_return.length(); ++i) {
+      string_return.at(i) = toupper(static_cast<char>(string_return.at(i)));
+    }
+  }
+  return "Message: " + string_return;
+}
 // For testing (DO NOT ALTER)
 void UnitTest() {
   cout << string(40, '-') << endl;
