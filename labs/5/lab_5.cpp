@@ -1,7 +1,7 @@
 /*
  * Name        : lab_5.cpp
  * Author      : FILL IN
- * Description : Practicing Functions
+ * Description : Practising Functions
  */
 
 #include <iostream>

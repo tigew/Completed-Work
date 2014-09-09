@@ -1,6 +1,6 @@
-# Makefile for Lab 5
+# Makefile for Lab 7
 CXX = /usr/bin/g++
-MAIN = lab_5
+MAIN = lab_7
 CPP_FILES = 
 H_FILES = 
 CXXFLAGS = -Wall -Wextra -pedantic -g

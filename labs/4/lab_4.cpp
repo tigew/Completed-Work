@@ -154,7 +154,6 @@ bool StringToBool(string value) {
   // CODE HERE
   bool bool_return;
   if (!value.empty()) {
-
     value = value.at(0);
 
     if (value == "t" || value == "T") {
