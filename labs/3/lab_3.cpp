@@ -125,13 +125,14 @@ string Goldilocks(string item, int number) {
  */
 int RockScissorPaper(char player_one, char player_two) {
   // YOU MUST USE A SWITCH IN THIS FUNCTION
+  player_one = putchar(toupper(player_one));
+  player_two = putchar(toupper(player_two));
   int winner = 0;
   switch (player_one) {
     case 'R':
-    case 'r':
-      if (player_two == 'R' || player_two == 'r') {
+      if (player_two == 'R') {
         winner = 3;
-      } else if (player_two == 'P' || player_two == 'p') {
+      } else if (player_two == 'P') {
         winner = 2;
       } else {
         winner = 1;
@@ -139,10 +140,9 @@ int RockScissorPaper(char player_one, char player_two) {
     break;
 
     case 'S':
-    case 's':
-      if (player_two == 'S' || player_two == 's') {
+      if (player_two == 'S') {
         winner = 3;
-      } else if (player_two == 'R' || player_two == 'r') {
+      } else if (player_two == 'R') {
         winner = 2;
       } else {
         winner = 1;
@@ -150,10 +150,9 @@ int RockScissorPaper(char player_one, char player_two) {
     break;
 
     case 'P':
-    case 'p':
-      if (player_two == 'P' || player_two == 'p') {
+      if (player_two == 'P') {
         winner = 3;
-      } else if (player_two == 'S' || player_two == 's') {
+      } else if (player_two == 'S') {
         winner = 2;
       } else {
         winner = 1;
