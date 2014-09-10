@@ -87,7 +87,41 @@ int main() {
 }
 
 // CODE HERE (FUNCTION DEFINITIONS)
+string PrepareForDisplay(int values[], int size, char separator) {
+  cout << values[0];
+  cout << size;
+  cout << separator;
+  return "Hi";
+}
 
+bool HasValue(int values[], int size, int value) {
+  cout << values[0];
+  cout << size;
+  cout << value;
+  return false;
+}
+
+int ValueAt(int values[], int size, int index, bool& error) {
+  cout << values[0];
+  cout << size;
+  cout << index;
+  cout << error;
+  return 0;
+}
+
+int Sum(int values[], int size) {
+  cout << values[0];
+  cout << size;
+  return 0;
+}
+
+bool SwapValues(int values[], int size, int index1, int index2) {
+  cout << values[0];
+  cout << size;
+  cout << index1;
+  cout << index2;
+  return false;
+}
 
 // For testing (DO NOT ALTER)
 void UnitTest() {
