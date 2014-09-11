@@ -88,39 +88,64 @@ int main() {
 
 // CODE HERE (FUNCTION DEFINITIONS)
 string PrepareForDisplay(int values[], int size, char separator) {
-  cout << values[0];
-  cout << size;
-  cout << separator;
-  return "Hi";
+  stringstream ss;
+  string string_return = "";
+  for (int i = 0; i < size; ++i) {
+    if (i == size - 1) {
+      ss << values[i];
+    } else {
+      ss << values[i] << separator;
+    }
+  }
+  string_return = ss.str();
+  return string_return;
 }
 
 bool HasValue(int values[], int size, int value) {
-  cout << values[0];
-  cout << size;
-  cout << value;
-  return false;
+  bool bool_return = false;
+  for (int i = 0; i < size; ++i) {
+    if (values[i] == value) {
+      bool_return = true;
+    }
+  }
+  return bool_return;
 }
 
 int ValueAt(int values[], int size, int index, bool& error) {
-  cout << values[0];
-  cout << size;
-  cout << index;
-  cout << error;
-  return 0;
+  int int_return = 0;
+  error = false;
+  if (size > index && index >= 0) {
+    for (int i = 0; i < size; ++i) {
+      if (i == index) {
+        int_return = values[i];
+      }
+    }
+  } else {
+    error = true;
+  }
+  return int_return;
 }
 
 int Sum(int values[], int size) {
-  cout << values[0];
-  cout << size;
-  return 0;
+  int array_total = 0;
+  for (int i = 0; i < size; ++i) {
+    array_total += values[i];
+  }
+  return array_total;
 }
 
 bool SwapValues(int values[], int size, int index1, int index2) {
-  cout << values[0];
-  cout << size;
-  cout << index1;
-  cout << index2;
-  return false;
+  int temp_num = 0;
+  bool swap_worked = false;
+  if (size > index1 && index1 >= 0 && size > index2 && index2 >= 0) {
+    temp_num = values[index1];
+    values[index1] = values[index2];
+    values[index2] = temp_num;
+    swap_worked = true;
+  } else {
+    swap_worked = false;
+  }
+  return swap_worked;
 }
 
 // For testing (DO NOT ALTER)
