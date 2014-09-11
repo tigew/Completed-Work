@@ -39,6 +39,7 @@ char GetCharacter(string input, int char_index);
 int main() {
   // To test your code (DO NOT ALTER)
   UnitTest();
+  // Test
   // This ends program execution
   return 0;
 }
