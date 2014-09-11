@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <iostream>
+#include <climits>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -21,25 +22,13 @@ int CountWords(string input);
 int Average(int num_array[], int limit);
 int Minimum(int num_array[], int limit);
 int Maximum(int num_array[], int limit);
+void UnitTest();
+void Test(bool test, string more_info = "");
 
 // Program Execution Starts Here
 int main() {
-  int is_alpha = 0;
-  int is_numeric = 0;
-  int foo[5] = {16, 2, 77, 40, 12071};
-
-  CountCharacters("Tester123", is_alpha, is_numeric);
-  cout << "# of alpha characters in 'Tester123' " << is_alpha << endl;
-  cout << "# of numeric characters in 'Tester123' " << is_numeric << endl;
-  cout << "'Hello World' mutated " << UpAndDown("HelloWorld") << endl;
-  cout << "Number of words in 'Hello World' "
-       << CountWords("Hello World") << endl;
-  cout << "Average of 16, 2, 77, 40, 12071 (non floating) is "
-       << Average(foo, 5) << "." << endl;
-  cout << "Minimum of 16, 2, 77, 40, 12071 (non floating) is "
-       << Minimum(foo, 5) << "." << endl;
-  cout << "Maximum of 16, 2, 77, 40, 12071 (non floating) is "
-       << Maximum(foo, 5) << "." << endl;
+  // Calls UnitTest
+  UnitTest();
   // This ends program execution
   return 0;
 }
@@ -172,4 +161,82 @@ int Maximum(int num_array[], int limit) {
     }
   }
   return largest_num;
+}
+
+// Function Definitions
+void UnitTest() {
+  cout << "\nSTARTING UNIT TEST\n\n";
+
+  int n1 = 0, n2 = 0;
+  CountCharacters("", n1, n2);
+  Test((n1 == 0) && (n2 == 0), "CountCharacters(empty string)");
+  CountCharacters("hello", n1, n2);
+  Test((n1 == 5) && (n2 == 0), "CountCharacters(\"hello\")");
+  CountCharacters("12345", n1, n2);
+  Test((n1 == 0) && (n2 == 5), "CountCharacters(\"12345\")");
+  CountCharacters("hello 12345", n1, n2);
+  Test((n1 == 5) && (n2 == 5), "CountCharacters(\"hello 12345\")");
+  CountCharacters("&,.", n1, n2);
+  Test((n1 == 0) && (n2 == 0), "CountCharacters(\"&,.\")");
+  string s;
+  s = UpAndDown("hello");
+  Test(s == "HeLlO", "UpAndDown(\"hello\")");
+  s = UpAndDown("HeLlO");
+  Test(s == "HeLlO", "UpAndDown(\"HeLlO\")");
+  s = UpAndDown("hElLo");
+  Test(s == "HeLlO", "UpAndDown(\"hElLo\")");
+  s = UpAndDown("");
+  Test(s == "", "UpAndDown(\"\")");
+  s = UpAndDown("a");
+  Test(s == "A", "UpAndDown(\"a\")");
+  Test(CountWords("") == 0, "CountWords(\"\")");
+  Test(CountWords("hello") == 1, "CountWords(\"hello\")");
+  Test(CountWords("hello,world") == 1, "CountWords(\"hello world\")");
+  Test(CountWords("hello world") == 2, "CountWords(\"hello world\")");
+  Test(CountWords("hello, world") == 2, "CountWords(\"hello, world\")");
+  int values[] = { 10, 20, 30 };
+  Test(Average(values, 3) == 20, "ComputeAverage([10,20,30])");
+  values[0] = 0, values[1] = 0, values[2] = 0;
+  Test(Average(values, 3) == 0, "ComputeAverage([0,0,0])");
+  values[0] = 5, values[1] = 7, values[2] = 11;
+  Test(Average(values, 3) == 7, "ComputeAverage([5,7,11])");
+  values[0] = -10, values[1] = -20, values[2] = -30;
+  Test(Average(values, 3) == -20, "ComputeAverage([-10,-20,-30])");
+  values[0] = -5, values[1] = 0, values[2] = 5;
+  Test(Average(values, 3) == 0, "ComputeAverage([-5,0,5])");
+  values[0] = -1, values[1] = 0, values[2] = 1;
+  Test(Minimum(values, 3) == -1, "FindMinValue([-1,0,1])");
+  values[0] = -3, values[1] = -2, values[2] = -1;
+  Test(Minimum(values, 3) == -3, "FindMinValue([-3,-2,-1])");
+  values[0] = 0, values[1] = 1, values[2] = 2;
+  Test(Minimum(values, 3) == 0, "FindMinValue([0,1,2])");
+  values[0] = 1, values[1] = 1, values[2] = 1;
+  Test(Minimum(values, 3) == 1, "FindMinValue([1,1,1])");
+  values[0] = INT_MAX, values[1] = INT_MAX, values[2] = INT_MAX;
+  Test(Minimum(values, 3) == INT_MAX,
+       "FindMinValue([INT_MAX,INT_MAX,INT_MAX])");
+  values[0] = -1, values[1] = 0, values[2] = 1;
+  Test(Maximum(values, 3) == 1, "FindMaxValue([-1,0,1])");
+  values[0] = -3, values[1] = -2, values[2] = -1;
+  Test(Maximum(values, 3) == -1, "FindMaxValue([-3,-2,-1])");
+  values[0] = 0, values[1] = 1, values[2] = 2;
+  Test(Maximum(values, 3) == 2, "FindMaxValue([0,1,2])");
+  values[0] = 1, values[1] = 1, values[2] = 1;
+  Test(Maximum(values, 3) == 1, "FindMaxValue([1,1,1])");
+  values[0] = INT_MIN, values[1] = INT_MIN, values[2] = INT_MIN;
+  Test(Maximum(values, 3) == INT_MIN,
+       "FindMaxValue([INT_MIN,INT_MIN,INT_MIN])");
+
+  cout << "\nUNIT TEST COMPLETE\n\n";
+}
+
+// For testing (DO NOT ALTER)
+void Test(bool test, string more_info) {
+  static int test_number = 1;
+  if (test)
+    cout << "PASSSED TEST ";
+  else
+    cout << "FAILED  TEST ";
+  cout << test_number << " " << more_info << "!\n";
+  test_number++;
 }
