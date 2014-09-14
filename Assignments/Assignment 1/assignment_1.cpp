@@ -1,4 +1,4 @@
-/*
+/**
  * Name        : assignment_1.cpp
  * Author      : Travis Peebles
  * Description : The purpose of this assignment is to practice basic programming
@@ -33,7 +33,7 @@ int main() {
   return 0;
 }
 
-/*
+/**
  * This function will count the number of alphabetic characters and the 
  * number of numeric characters in a string.
  * @uses
@@ -58,7 +58,7 @@ void CountCharacters(string input, int &is_alpha, int &is_numeric) {
   }
 }
 
-/*
+/**
  * This function will take a string and return a version of it where the 
  * first letter is capitalized, the second is lowercase, the third is 
  * capitalized, etc.
@@ -79,7 +79,7 @@ string UpAndDown(string input) {
   return input;
 }
 
-/* 
+/** 
  * This function will take a string of words, delimited by a space 
  * character, and count how many words there are. The string will 
  * never have multiple spaces between words or a space at the
@@ -105,7 +105,7 @@ int CountWords(string input) {
   return num_words;
 }
 
-/* 
+/**
  * This function will compute the mean average of the values in the 
  * array. The array will always be at least of size 1.
  * @uses
@@ -125,7 +125,7 @@ int Average(int num_array[], int limit) {
   return average;
 }
 
-/*
+/**
  * This function will find and return the smallest value in an array. The 
  * array will always be at least of size 1.
  * @uses
@@ -144,7 +144,7 @@ int Minimum(int num_array[], int limit) {
   return smallest_num;
 }
 
-/*
+/**
  * This function will find and return the largest value in an array. The 
  * array will always be at least of size 1.
  * @uses

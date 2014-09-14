@@ -1,4 +1,4 @@
-/*
+/**
  * Name        : lab_3.cpp
  * Author      : Travis Peebles
  * Description : Using branching statements, looping statements and string and
@@ -43,7 +43,7 @@ int main() {
   return 0;
 }
 
-/*
+/**
  * Tell the story of Goldilocks. For example, if item is "bed" and number is 1,
  * the story will say "This bed is too soft". "item" parameter will be passed
  * in as all lowercase characters
@@ -111,7 +111,7 @@ string Goldilocks(string item, int number) {
   }
 }
 
-/*
+/**
  * Compute the outcome of a round of a rock-scissor-paper game. Lowercase or
  * uppercase values for player_one and player_two arguments are acceptable.
  * Possible inputs: 'R' rock, 'S' scissor, 'P' paper
@@ -163,7 +163,7 @@ int RockScissorPaper(char player_one, char player_two) {
   return winner;
 }
 
-/*
+/**
  * Return a string that contains a character (taken from the parameter
  * c) and its ASCII integer value. For example, If the char passed in is 'A',
  * the function will return '"A 65"
@@ -180,7 +180,7 @@ string CharWithAsciiValueAsString(char c) {
   // HINT: try a stringstream here
 }
 
-/*
+/**
  * Return the input string with all characters converted to lowercase.
  * @param string input - The string that will be converted to all lowercase
  * @return string - a string containing the converted input string
@@ -193,7 +193,7 @@ string ToLower(string input) {
   return input;
 }
 
-/*
+/**
  * Return the input string with all characters converted to uppercase.
  * @param string input - The string that will be converted to all uppercase
  * @return string - a string containing the converted input string
@@ -206,7 +206,7 @@ string ToUpper(string input) {
   return input;
 }
 
-/*
+/**
  * Return the character from the input string at index char_index.
  * @param string input - The string from which the character will be taken
  * @param int char_index - The zero-indexed position of the character to return.
