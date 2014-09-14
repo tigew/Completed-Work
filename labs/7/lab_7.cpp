@@ -57,6 +57,9 @@ int main() {
 }
 
 // CODE HERE -- FUNCTION DEFINITION
+bool ProcessFile(string filename) {
+  return true;
+}
 
 // For testing (DO NOT ALTER)
 void UnitTest() {
