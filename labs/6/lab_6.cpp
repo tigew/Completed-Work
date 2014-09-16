@@ -1,6 +1,6 @@
 /*
  * Name        : lab_6.cpp
- * Author      : FILL IN
+ * Author      : Travis Peebles
  * Description : Working with Arrays
  */
 
