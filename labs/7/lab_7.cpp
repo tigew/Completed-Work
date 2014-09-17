@@ -58,6 +58,40 @@ int main() {
 
 // CODE HERE -- FUNCTION DEFINITION
 bool ProcessFile(string filename) {
+  ifstream fin(filename.c_str());
+  int test_int = 0;
+
+  if (fin.fail()) {
+    return false;
+  }
+
+  while (fin >> test_int) {
+    switch (test_int) {
+      case 10:
+        OnTen();
+      break;
+
+      case 20:
+        OnTwenty();
+      break;
+
+      case 30:
+        OnThirty();
+      break;
+
+      case 40:
+        OnForty();
+      break;
+
+      case 50:
+        OnFifty();
+      break;
+
+      default:
+        OnError();
+      break;
+    }
+  }
   return true;
 }
 
