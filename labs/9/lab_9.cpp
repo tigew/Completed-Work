@@ -107,6 +107,37 @@ int main() {
 
 // CODE HERE -- CLASS DEFINITION
 
+void Spaceship::set_name(string name) {
+}
+
+void Spaceship::set_top_speed(double top_speed) {
+}
+
+void Spaceship::set_fuel_source(string fuel_source) {
+}
+
+void Spaceship::set_crew_capacity(int crew_capacity) {
+}
+
+string Spaceship::name() const {
+  return "abc";
+}
+
+double Spaceship::top_speed() const {
+  return 0.0;
+}
+
+string Spaceship::fuel_source() const {
+  return "abc";
+}
+
+int Spaceship::crew_capacity() const {
+  return 0;
+}
+
+string Spaceship::ToString() const {
+  return "yes";
+}
 
 // For testing (DO NOT ALTER)
 void UnitTest() {
