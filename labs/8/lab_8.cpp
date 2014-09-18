@@ -15,6 +15,7 @@ using std::endl;
 using std::string;
 using std::map;
 using std::stringstream;
+using std::ios_base;
 
 /*
  * Process the argv array (command-line arguments to the program). Ignore
@@ -59,6 +60,44 @@ int main(int argc, char* argv[]) {
 }
 
 // CODE HERE -- FUNCTION DEFINITION
+void ProcessArguments(int argc, char *argv[]) {
+  int test_int = 0;
+  for (int i = 1; i < argc; ++i) {
+    stringstream ss(argv[i]);
+    ss.exceptions(ios_base::failbit);
+
+    try {
+      ss >> test_int;
+    } catch(ios_base::failure f) {
+    }
+
+    switch (test_int) {
+      case 10:
+        OnTen();
+      break;
+
+      case 20:
+        OnTwenty();
+      break;
+
+      case 30:
+        OnThirty();
+      break;
+
+      case 40:
+        OnForty();
+      break;
+
+      case 50:
+        OnFifty();
+      break;
+
+      default:
+        OnError();
+      break;
+    }
+  }
+}
 
 // For testing (DO NOT ALTER)
 void UnitTest(int argc, char *argv[]) {
