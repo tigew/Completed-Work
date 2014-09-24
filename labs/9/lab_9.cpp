@@ -1,6 +1,6 @@
 /*
  * Name        : lab_9.cpp
- * Author      : FILL IN
+ * Author      : Travis Peebles
  * Description : Working with Classes
  */
 #include <iostream>
