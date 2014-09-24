@@ -3,7 +3,7 @@
 Repositroy for all work done in CSCI 21 inc.
 Labs, Assignments, and tools excluding examples
 
-<h3>Completed work as of 9/18</h3>
+<h3>Completed work as of 9/23</h3>
 
 | Lab    | Is done? | Assignment   | Is done? |
 | :----- | :------: | :----------  | :-------:|
