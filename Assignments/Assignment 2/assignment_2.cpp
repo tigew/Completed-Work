@@ -1,3 +1,9 @@
+/*
+ * Name        : assignment_@.cpp
+ * Author      : Travis Peebles
+ * Description : Replicates functions of UNIX cat
+ */
+
 #include <fstream>
 #include <iostream>
 #include <string>
