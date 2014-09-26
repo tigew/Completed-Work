@@ -1,9 +1,9 @@
-<h2>P&A2 Personal Repository</h2>
+<h2>Completed-Work Personal Repository</h2>
 
-Repositroy for all work done in CSCI 21 inc.
+Repositroy for all work done in class inc.
 Labs, Assignments, and tools excluding examples
 
-<h3>Completed work as of 9/23</h3>
+<h3>Completed work as of 9/26</h3>
 
 | Lab    | Is done? | Assignment   | Is done? |
 | :----- | :------: | :----------  | :-------:|
@@ -16,6 +16,6 @@ Labs, Assignments, and tools excluding examples
 | Lab 7  |     Y    | 
 | Lab 8  |     Y    |
 | Lab 9  |     Y    |
-| Lab 10 |     N    |
+| Lab 10 |     Y    |
 | Lab 11 |     N    |
 | Lab 12 |     N    | 
