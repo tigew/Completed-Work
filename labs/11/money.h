@@ -1,10 +1,13 @@
 /*
  * Name        : money.h
- * Author      : FILL IN
+ * Author      : Travis Peebles
  * Description : Class Header File
  */
 
 // ADD HEADER GUARD HERE
+
+#ifndef MONEY_H
+#define MONEY_H
 
 #include <string>
 #include <iostream>
@@ -113,3 +116,4 @@ class Money {
 };
 
 // REST OF HEADER GUARD GOES HERE
+#endif  // MONEY_H
