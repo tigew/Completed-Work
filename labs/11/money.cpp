@@ -26,16 +26,20 @@ const Money operator -(const Money& amount1, const Money& amount2) {
   // get cents from both objects
   int cents_1 = amount1.cents_ + amount1.dollars_ * 100;
   int cents_2 = amount2.cents_ + amount2.dollars_ * 100;
+
   // subtract them
   int sum_all_cents = cents_1 - cents_2;
+
   // handle negatives
   int abs_all_cents = abs(sum_all_cents);
   int final_dollars = abs_all_cents / 100;
   int final_cents = abs_all_cents % 100;
+
   if (sum_all_cents < 0) {
     final_dollars -= final_dollars;
     final_cents   -= final_cents;
   }
+
   // return
   return Money(final_dollars, final_cents);
 }
@@ -43,7 +47,6 @@ const Money operator -(const Money& amount1, const Money& amount2) {
 bool operator ==(const Money &amount1, const Money &amount2) {
   int get_cents1 = amount1.cents_ + (amount1.dollars_ * 100);
   int get_cnets2 = amount2.cents_ + (amount2.dollars_ * 100);
-
   if (get_cents1 == get_cnets2) {
     return true;
   } else {
@@ -56,7 +59,11 @@ const Money operator -(const Money &amount) {
 }
 
 ostream& operator <<(ostream &out, const Money &amount) {
-  out << amount.cents_;
+  int cents_1 = amount.cents_ + (amount.dollars_ * 100);
+  int abs_all_cents = abs(cents_1);
+  int final_dollars = abs_all_cents / 100;
+  int final_cents = abs_all_cents % 100;
+  out << "$" << final_dollars << "." << final_cents;
 }
 
 
