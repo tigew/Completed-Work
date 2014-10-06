@@ -1,6 +1,6 @@
 /*
  * Name        : lab_12.cpp
- * Author      : FILL IN
+ * Author      : Travis Peebles
  * Description : Working with Pointers and Dynamic Variables / Arrays
  */
 #include <iostream>
@@ -67,6 +67,21 @@ int main() {
 
 // CODE HERE -- FUNCTION DEFINITIONS
 
+int* MakeDynoIntArray(unsigned int size) {
+  return 1;
+}
+
+int Sum(int* the_array, unsigned int array_size) {
+  return 1;
+}
+
+int Max(int* the_array, unsigned int array_size) {
+  return 1;
+}
+
+int Min(int* the_array, unsigned int array_size) {
+  return 1;
+}
 
 // For testing (DO NOT ALTER)
 void UnitTest() {

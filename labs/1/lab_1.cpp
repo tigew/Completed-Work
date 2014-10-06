@@ -1,6 +1,6 @@
 /*
  * Name        : lab_1.cpp
- * Author      : FILL IN
+ * Author      : Travis Peebles
  * Description : FILL IN
  */
 
@@ -31,7 +31,7 @@ int main() {
   // (3) Display a welcome message to standard output
   cout << "Welcome to the Program!" << endl;
   // (4) Prompt the user for their first name
-  cout << "Please enter your name." << enæ…dl;
+  cout << "Please enter your name." << endl;
   // (5) Read the name from standard input and store in the variable user_name
   cin >> user_name;
   // (6) Display the message "Nice to meet you, NAME" where NAME is replaced
