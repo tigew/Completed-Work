@@ -68,19 +68,43 @@ int main() {
 // CODE HERE -- FUNCTION DEFINITIONS
 
 int* MakeDynoIntArray(unsigned int size) {
-  return 1;
+  int *array;
+  array = new int[size];
+  return array;
 }
 
 int Sum(int* the_array, unsigned int array_size) {
-  return 1;
+  int arr_total = 0;
+  for (unsigned int i = 0; i < array_size; i++) {
+    arr_total += *(the_array + i);
+  }
+  return arr_total;
 }
 
 int Max(int* the_array, unsigned int array_size) {
-  return 1;
+  if (the_array == NULL) {
+    throw "NULL ARRAY REFERENCE";
+  }
+  int max_array_int = the_array[0];
+  for (unsigned int i = 0; i < array_size; i++) {
+    if (*(the_array + i) > max_array_int) {
+      max_array_int = *(the_array + i);
+    }
+  }
+  return max_array_int;
 }
 
 int Min(int* the_array, unsigned int array_size) {
-  return 1;
+  if (the_array == NULL) {
+    throw "NULL ARRAY REFERENCE";
+  }
+  int min_array_int = the_array[0];
+  for (unsigned int i = 0; i < array_size; i++) {
+    if (*(the_array + i) < min_array_int) {
+      min_array_int = *(the_array + i);
+    }
+  }
+  return min_array_int;
 }
 
 // For testing (DO NOT ALTER)
