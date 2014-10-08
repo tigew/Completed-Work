@@ -17,5 +17,5 @@ Labs, Assignments, and tools excluding examples
 | Lab 8  |     Y    |
 | Lab 9  |     Y    |
 | Lab 10 |     Y    |
-| Lab 11 |     N    |
-| Lab 12 |     N    | 
+| Lab 11 |     Y    |
+| Lab 12 |     Y    | 
