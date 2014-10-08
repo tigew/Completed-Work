@@ -1,7 +1,10 @@
 #include "todo_item.h"
 
 TodoItem::TodoItem(string description, int priority,
-    bool completed) {
+    bool completed)
+    : description_(description),
+      priority_(priority),
+      completed_(completed) {
 }
 
 TodoItem::~TodoItem() {
@@ -10,7 +13,13 @@ TodoItem::~TodoItem() {
 string TodoItem::SetDescription(string description) {
 }
 
-bool TodoItem::SetCompleted(bool completed) {
+void TodoItem::SetDescription(string description) {
+}
+
+void TodoItem::SetPriority(int priority) {
+}
+
+void TodoItem::SetCompleted(bool completed) {
 }
 
 string TodoItem::GetDescription() const {
@@ -28,5 +37,5 @@ string TodoItem::ToFile() {
 ostream& operator <<(ostream &out, const TodoItem &item) {
 }
 
-string Scrub() {
+string Scrub(string unmodified) {
 }

@@ -10,53 +10,57 @@ using std::ostream;
 class TodoItem {
  public:
   /**
-   * 
+   * Default Constructor
    */
   TodoItem(string description, int priority = 1, bool completed = false);
   /**
-   * 
+   * Default Destructor
    */
   ~TodoItem();
   /**
-   * [SetDescription description]
-   * @param  description [description]
-   * @return             [description]
+   * Sets the private string description_
+   *
+   * @param description - Desired description
    */
-  string SetDescription(string description);
+  void SetDescription(string description);
   /**
-   * [SetPriority description]
-   * @param  priority [description]
-   * @return          [description]
+   * Sets the private int priority_
+   * set the priority to 5 if invalid value is given
+   * @param priority - Desired priority
    */
-  int SetPriority(int priority);
+  void SetPriority(int priority);
   /**
-   * [SetCompleted description]
-   * @param  completed [description]
-   * @return           [description]
+   * Sets the private bool completed_
+   * @param completed - is the task completed or not
    */
-  bool SetCompleted(bool completed);
+  void SetCompleted(bool completed);
   /**
-   * [GetDescription description]
-   * @return [description]
+   * Accsesor
+   * @return private string description_
    */
   string GetDescription() const;
   /**
-   * [GetPriority description]
-   * @return [description]
+   * Accsesor
+   * @return private int priority_
    */
   int GetPriority() const;
   /**
-   * [GetCompleted description]
-   * @return [description]
+   * Accsesor
+   * @return private bool completed_
    */
   bool GetCompleted() const;
   /**
-   * [ToFile description]
-   * @return [description]
+   * Returns a string containing the description,
+   * priority, and completed status, separated by the @ symbol (This is
+   * the description@3@1). Uses the scrub function to change @
+   * symbols in the description.
+   *
+   * @return string containing all item details seperated by an '@' symbol
    */
   string ToFile();
   /**
-   * 
+   * Outputs (in a nice looking way) all of the information about the
+   * item
    */
   friend ostream& operator <<(ostream &out, const TodoItem &item);
 
@@ -65,10 +69,12 @@ class TodoItem {
   int priority_;
   bool completed_;
   /**
-   * [Scrub description]
-   * @return [description]
+   * Replaces all '@' wiht '#' symbols and returns the modified string
+   * @param string to be scrubed from ToFile()
+   *
+   * @return the modifed string with the new symbol
    */
-  string Scrub();
+  string Scrub(string unmodifed);
 };
 
 #endif

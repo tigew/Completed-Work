@@ -12,7 +12,7 @@ void TodoList::AddItem(TodoItem *item) {
 void TodoList::DeleteItem(int location) {
 }
 
-void TodoList::GetItem() {
+TodoItem* TodoList::GetItem() {
 }
 
 int TodoList::GetSize() {
