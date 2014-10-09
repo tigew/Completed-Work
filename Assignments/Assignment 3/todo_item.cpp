@@ -10,7 +10,7 @@ TodoItem::TodoItem(string description, int priority,
 TodoItem::~TodoItem() {
 }
 
-void TodoItem::SetDescription(string description){
+void TodoItem::SetDescription(string description) {
   std::cout << description;
 }
 
@@ -39,7 +39,7 @@ string TodoItem::ToFile() {
 }
 
 ostream& operator <<(ostream &out, const TodoItem &item) {
-return out << item;
+  return out << item;
 }
 
 string Scrub(string unmodified) {
