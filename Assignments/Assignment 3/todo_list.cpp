@@ -36,8 +36,8 @@ string ToFile() {
   return "test";
 }
 
-ostream& operator <<(ostream &out, const TodoItem &item) {
-  return out << item;
+ostream& operator <<(ostream &out, const TodoList &list) {
+  return out << list;
 }
 
 void IncreaseCapacity() {

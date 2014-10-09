@@ -1,8 +1,8 @@
 # Makefile for Lab 4
 CXX = /usr/bin/g++
 MAIN = driver
-CPP_FILES = todo_ui.cpp todo_list.cpp todo_item.cpp
-H_FILES = todo_ui.h todo_list.h todo_item.h
+CPP_FILES = todo_ui.cpp todo_list.cpp todo_item.cpp CinReader.cpp
+H_FILES = todo_ui.h todo_list.h todo_item.h CinReader.h
 CXXFLAGS = -Wall -Wextra -Werror -pedantic -g
 
 # Type 'make' to create the executable

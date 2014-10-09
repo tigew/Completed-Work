@@ -76,7 +76,7 @@ class TodoList {
    * Outputs a numbered list of all TodoItem present in the list. Will use
    * TodoItem overloaded<<
    */
-  friend ostream& operator <<(ostream &out, const TodoItem &item);
+  friend ostream& operator <<(ostream &out, const TodoList &list);
 
  private:
   /**
