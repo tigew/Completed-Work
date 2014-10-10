@@ -5,7 +5,7 @@
  */
 #include <iostream>
 #include <string>
-#include <cstring>
+#include <cstring>  
 using std::cout;
 using std::endl;
 using std::string;
@@ -84,7 +84,60 @@ int main() {
 }
 
 // CODE HERE -- FUNCTION DEFINITION
+string* MakeDynoString(string contents) {
+  string *dyn_string;
+  dyn_string = new string(contents);
+  return dyn_string;
+}
 
+void ClearDynoString(string *&the_string) {
+  delete the_string;
+  the_string = NULL;
+}
+
+unsigned int CountChars(string* theString, unsigned int &alpha,
+                        unsigned int &num) {
+  num = 0;
+  alpha = 0;
+
+  if (theString == NULL) {
+    throw "NULL STRING REFERENCE";
+  }
+
+  for (unsigned int i = 0; i < theString->length(); ++i) {
+      if (isdigit(theString->at(i))) {
+          num++;
+      } else if (isalpha(theString->at(i))) {
+        alpha++;
+      }
+  }
+  return theString->length();
+}
+
+bool FindWord(string *the_string, string the_word) {
+  if (the_string == NULL) {
+    throw "NULL STRING REFERENCE";
+  }
+
+  if (the_string->find(the_word) != string::npos) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+bool ReplaceWord(string* the_string, string old_word, string new_word) {
+  if (the_string == NULL) {
+    throw "NULL STRING REFERENCE";
+  }
+  if (the_string->find(old_word) != string::npos) {
+    the_string->replace(the_string->find(old_word),
+      old_word.length(), new_word);
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // For testing (DO NOT ALTER)
 void UnitTest() {
