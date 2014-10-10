@@ -5,7 +5,7 @@
  */
 #include <iostream>
 #include <string>
-#include <cstring>  
+#include <cstring>
 using std::cout;
 using std::endl;
 using std::string;
