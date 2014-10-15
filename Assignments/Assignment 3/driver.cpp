@@ -4,7 +4,7 @@ using std::cout;
 using std::endl;
 
 int main(int argc, const char *argv[]) {
-  cout << argc << endl;
-  cout << argv[0] << endl;
+  TodoUI ui;
+  io.menu();
   return 0;
 }
