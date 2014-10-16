@@ -1,6 +1,6 @@
 /*
  * Name        : lab_15.cpp
- * Author      : FILL IN
+ * Author      : Travis Peebles
  * Description : Working with Insertion and Shell Sort
  */
 #include <iostream>
@@ -62,23 +62,38 @@ int main() {
 
 // CODE HERE -- FUNCTION DEFINITION
 int InsertionSort(int the_array[], unsigned int size) {
-  for (unsigned int i = 2; i < size - 1; i++) {
-    for (unsigned int k = i; k > i && the_array[k] < the_array[k -1]; k--) {
-      SwapValues(the_array[k], the_array[k-1]);
+  int passes = 0;
+
+  for (unsigned int i = 0; i <= (size - 1); i++) {
+    unsigned int j = i;
+    passes++;
+
+    while ((j > 0) && (the_array[j] < the_array[j - 1])) {
+        SwapValues(the_array[j], the_array[j - 1]);
+        j = j - 1;
     }
   }
+  return passes;
 }
 
 int ShellSort(int the_array[], unsigned int size) {
-  /*
-  unsigned int h = 1;
-  while (h < size - 1 || h == 3 * h  + 1) {
-    while (h > 0) {
-      for () {
+  int passes = 0;
+  unsigned int gap = size / 2;
+
+  while (gap > 0) {
+    passes++;
+    for (unsigned int i = gap; i <= (size - 1); i++) {
+      int temp = the_array[i];
+      unsigned int j = i;
+      while ((j >= gap) && (the_array[j - gap] > temp)) {
+          the_array[j] = the_array[j - gap];
+          j = j - gap;
       }
+      the_array[j] = temp;
     }
+    gap = gap / 2;
   }
-  */
+  return passes;
 }
 
 void SwapValues(int &value_1, int &value_2) {
