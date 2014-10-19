@@ -85,6 +85,7 @@ int ShellSort(int the_array[], unsigned int size) {
     for (unsigned int i = gap; i <= (size - 1); i++) {
       int temp = the_array[i];
       unsigned int j = i;
+
       while ((j >= gap) && (the_array[j - gap] > temp)) {
           the_array[j] = the_array[j - gap];
           j = j - gap;
