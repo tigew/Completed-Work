@@ -1,8 +1,10 @@
 #ifndef TODO_UI_H
 #define TODO_UI_H
 
+#include <iostream>
 #include "CinReader.h"
 #include "todo_list.h"
+#include "todo_item.h"
 
 class TodoUI {
  public:
@@ -30,7 +32,12 @@ class TodoUI {
    */
   void menu();
 
+  void ClearScreen() {
+    system("printf \"\\033c\"");
+  }
+
  private:
   CinReader sc;
+  TodoList *todo_list_;
 };
 #endif

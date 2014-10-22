@@ -33,7 +33,7 @@ class TodoList {
    * need to pack your array (shift all items "down" so there are no
    * empty slots between items).
    *
-   * @param location - location of the item to be deleted
+   * @param location - location of the item to be deleteeted
    */
   void DeleteItem(int location);
   /**
@@ -44,7 +44,7 @@ class TodoList {
    *
    * @return TodoItem pointer
    */
-  TodoItem* GetItem();
+  TodoItem* GetItem(int location);
   /**
    * Returns an integer containing the current size of
    * the list (number of items present).
@@ -89,5 +89,9 @@ class TodoList {
    * Should be called by DeleteItem at the appropriate time.
    */
   void DecreaseCapacity();
+
+  TodoItem **todo_item_;
+  unsigned int list_size_;
+  unsigned int list_capacity_;
 };
 #endif

@@ -28,7 +28,7 @@ class TodoItem {
    * set the priority to 5 if invalid value is given
    * @param priority - Desired priority
    */
-  void SetPriority(int priority);
+  void SetPriority(int priority = 5);
   /**
    * Sets the private bool completed_
    * @param completed - is the task completed or not

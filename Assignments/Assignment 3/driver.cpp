@@ -1,10 +1,11 @@
-#include <iostream>
+#include "todo_ui.h"
 
 using std::cout;
 using std::endl;
 
-int main(int argc, const char *argv[]) {
+//  int argc, const char *argv[]
+int main() {
   TodoUI ui;
-  io.menu();
+  ui.menu();
   return 0;
 }

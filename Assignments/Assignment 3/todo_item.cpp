@@ -11,27 +11,27 @@ TodoItem::~TodoItem() {
 }
 
 void TodoItem::SetDescription(string description) {
-  std::cout << description;
+  description_ = description;
 }
 
 void TodoItem::SetPriority(int priority) {
-  std::cout << priority;
+  priority_ = priority;
 }
 
 void TodoItem::SetCompleted(bool completed) {
-  std::cout << completed;
+  completed_ = completed;
 }
 
 string TodoItem::GetDescription() const {
-  return "test";
+  return description_;
 }
 
 int TodoItem::GetPriority() const {
-  return 0;
+  return priority_;
 }
 
 bool TodoItem::GetCompleted() const {
-  return false;
+  return completed_;
 }
 
 string TodoItem::ToFile() {
