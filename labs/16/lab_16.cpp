@@ -162,14 +162,17 @@ bool ShoppingList::AddItem(string item) {
 }
 
 string ShoppingList::GetItem(unsigned int index) const {
+  assert(index >= 0 && index < max_items_ && item_count_ > 0);
   return items_[index];
 }
 
 string& ShoppingList::GetItem(unsigned int index) {
+  assert(index >= 0 && index < max_items_ && item_count_ > 0);
   return items_[index];
 }
 
 void ShoppingList::Reset(unsigned int max_items) {
+  assert(max_items > 0);
   delete[] items_;
   max_items_ = max_items;
   item_count_ = 0;
