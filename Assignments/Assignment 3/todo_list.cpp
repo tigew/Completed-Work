@@ -72,6 +72,15 @@ int TodoList::GetCapacity() {
 }
 
 void TodoList::Sort() {
+  for (unsigned int i = 0; i <= (list_capacity_ - 1); i++) {
+    unsigned int j = i;
+
+    while ((j > 0) && (todo_item_[j]->GetPriority() <
+                       todo_item_[j - 1]->GetPriority())) {
+        SwapValues(todo_item_[j], todo_item_[j - 1]);
+        j = j - 1;
+    }
+  }
 }
 
 string ToFile() {

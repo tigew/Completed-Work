@@ -79,6 +79,13 @@ class TodoList {
   friend ostream& operator <<(ostream &out, const TodoList &list);
 
  private:
+  void SwapValues(TodoItem* &value_1, TodoItem* &value_2) {
+  // DO NOT ALTER THE NEXT 3 LINES!!!
+    // Code SWAP Algorithm Here
+    TodoItem* temp = value_1;
+    value_1 = value_2;
+    value_2 = temp;
+  };
   /**
    * Increases the capacity of the array by 10. Should be called by
    * AddItem at the appropriate time.
