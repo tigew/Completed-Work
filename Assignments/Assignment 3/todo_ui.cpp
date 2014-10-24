@@ -5,6 +5,7 @@ TodoUI::TodoUI()
 }
 
 TodoUI::~TodoUI() {
+  delete todo_list_;
 }
 
 void TodoUI::menu() {

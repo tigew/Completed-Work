@@ -106,6 +106,10 @@ void TodoList::IncreaseCapacity() {
 
   todo_item_ = new TodoItem*[list_capacity_ + 10];
 
+  for (int i = 0; list_capacity_ + 10; i++) {
+    todo_item_[i] = NULL;
+  }
+
   for (unsigned int i = 0; i < list_capacity_; i++) {
     todo_item_[i] = temp_items[i];
   }
@@ -133,6 +137,10 @@ void TodoList::DecreaseCapacity() {
   delete[] todo_item_;
 
   todo_item_ = new TodoItem*[list_capacity_ - 10];
+
+  for (int i = 0; list_capacity_ - 10; i++) {
+    todo_item_[i] = NULL;
+  }
 
   for (unsigned int i = 0; i < list_capacity_; i++) {
     todo_item_[i] = temp_items[i];

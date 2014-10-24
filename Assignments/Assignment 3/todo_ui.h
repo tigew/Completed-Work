@@ -34,7 +34,7 @@ class TodoUI {
 
   void ClearScreen() {
     system("printf \"\\033c\"");
-  }
+  };
 
  private:
   CinReader sc;
