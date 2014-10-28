@@ -19,7 +19,7 @@ void TodoList::AddItem(TodoItem *item) {
     IncreaseCapacity();
   }
 
-  for (unsigned int i = 0; i < list_capacity_; ++i) {
+  for (unsigned int i = 0; i < list_capacity_; i++) {
     if (todo_item_[i] == NULL) {
       todo_item_[i] = item;
     }
