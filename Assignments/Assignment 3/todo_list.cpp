@@ -88,7 +88,10 @@ string ToFile() {
 }
 
 ostream& operator <<(ostream &out, const TodoList &list) {
-  return out << list;
+  for (int i = 0; i < list.GetSize(); i++) {
+    out << list.GetItem(i).GetDescription();
+  }
+  return out << "\n";
 }
 
 void TodoList::IncreaseCapacity() {

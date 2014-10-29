@@ -37,10 +37,9 @@ class TodoList {
    */
   void DeleteItem(int location);
   /**
-   * Please note the location is in human-readable form, i.e.
-   * location 1 is really array index 0. After you delete the item you will
-   * need to pack your array (shift all items "down" so there are no
-   * empty slots between items).
+   * Named GetItem. Has one parameter, an integer of the location to retrieve
+   * TodoItem. Please note the location is human readable form, i.e.
+   * location 1 is really array index 0.
    *
    * @return TodoItem pointer
    */

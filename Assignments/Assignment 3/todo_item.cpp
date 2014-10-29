@@ -35,7 +35,8 @@ bool TodoItem::GetCompleted() const {
 }
 
 string TodoItem::ToFile() {
-  return "test";
+  string return_string = "";
+  return return_string;
 }
 
 ostream& operator <<(ostream &out, const TodoItem &item) {

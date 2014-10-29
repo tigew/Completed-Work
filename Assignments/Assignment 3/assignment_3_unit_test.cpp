@@ -21,7 +21,6 @@ void UnitTest();
 // Program Execution Starts Here
 int main() {
   // START DEBUGGING CODE
-  
   // END DEBUGINH CODE
   // To test your code (DO NOT ALTER)
   UnitTest();
