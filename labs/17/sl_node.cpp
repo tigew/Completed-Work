@@ -6,7 +6,8 @@ SLNode::SLNode()
 }
 
 SLNode::SLNode(int contents)
-  : contents_(contents) {
+  : next_node_(NULL),
+    contents_(contents) {
 }
 
 SLNode::~SLNode() {
