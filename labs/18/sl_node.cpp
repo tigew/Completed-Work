@@ -1,3 +1,10 @@
+/*
+ * Name        : sl_node.cpp
+ * Author      : Travis Peebles
+ * Description : class SLNode.
+ *               Linked list function implementations
+ */
+
 #include "sl_node.h"
 
 SLNode::SLNode()

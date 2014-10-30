@@ -162,12 +162,12 @@ bool ShoppingList::AddItem(string item) {
 }
 
 string ShoppingList::GetItem(unsigned int index) const {
-  assert(index >= 0 && index < max_items_ && item_count_ > 0);
+  assert(index > 0 && index < max_items_ && item_count_ > 0);
   return items_[index];
 }
 
 string& ShoppingList::GetItem(unsigned int index) {
-  assert(index >= 0 && index < max_items_ && item_count_ > 0);
+  assert(index > 0 && index < max_items_ && item_count_ > 0);
   return items_[index];
 }
 

@@ -1,3 +1,10 @@
+/*
+ * Name        : sl_list.h
+ * Author      : Travis Peebles
+ * Description : class SLList.
+ *               Linked list content class
+ */
+
 #ifndef SLLIST_H
 #define SLLIST_H
 

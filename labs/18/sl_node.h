@@ -1,8 +1,8 @@
 /*
  * Name        : sl_node.h
  * Author      : Travis Peebles
- * Description : Unit Test for class SLNode.
- *               node header file
+ * Description : class SLNode.
+ *               Linked list class base
  */
 
 #ifndef SL_NODE_H

@@ -1,3 +1,10 @@
+/*
+ * Name        : sl_list.cpp
+ * Author      : Travis Peebles
+ * Description : class SLList.
+ *               Linked list content class implementation
+ */
+
 #include "sl_list.h"
 
 SLList::SLList()
