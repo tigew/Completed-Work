@@ -55,13 +55,13 @@ string SLList::ToString() const {
     return "";
   } else {
     SLNode* tempContents = head_;
-    for (unsigned int i = 0; i < size_; i++) {
-      if (i == size_ - 1) {
+    while (tempContents != NULL) {
+      if (tempContents->next_node() == NULL) {
         ss << tempContents->contents();
       } else {
         ss << tempContents->contents() << ", ";
       }
-        tempContents = tempContents->next_node();
+      tempContents = tempContents->next_node();
     }
   }
   return ss.str();
