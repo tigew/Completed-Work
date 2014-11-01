@@ -3,8 +3,11 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
 
 using std::string;
+using std::endl;
+using std::stringstream;
 using std::ostream;
 
 class TodoItem {

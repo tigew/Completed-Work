@@ -6,6 +6,7 @@
 #include <iostream>
 
 using std::string;
+using std::endl;
 using std::ostream;
 
 class TodoList {

@@ -35,15 +35,23 @@ bool TodoItem::GetCompleted() const {
 }
 
 string TodoItem::ToFile() {
-  string return_string = "";
-  return return_string;
+  stringstream ss;
+  ss << description_ << "@" << priority_ << "@" << completed_;
+  return Scrub(ss.str());
 }
 
 ostream& operator <<(ostream &out, const TodoItem &item) {
-  return out << item;
+  out << "Description: " << item.GetDescription() << endl;
+  out << "Priority: "        << item.GetPriority()       << endl;
+  out << "Completed: "  << item.GetCompleted() << endl;
+  return out;
 }
 
-string Scrub(string unmodified) {
-  std::cout << unmodified;
+string TodoItem::Scrub(string unmodified) {
+  for (unsigned int i = 0; 9 < unmodified.length(); i++) {
+    if (static_cast<char>(unmodified.at(i)) == '@') {
+      unmodified.at(i) =  '#';
+    }
+  }
   return unmodified;
 }

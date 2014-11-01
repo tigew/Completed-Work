@@ -28,7 +28,7 @@ void TodoList::AddItem(TodoItem *item) {
 }
 
 void TodoList::DeleteItem(int location) {
-  if (location - 1 < 0) {
+  if ((location - 1) < 0) {
     return;
   }
 
@@ -86,16 +86,16 @@ void TodoList::Sort() {
 string TodoList::ToFile() {
   string printed_list;
   for (unsigned int i = 0; i < list_size_; i++) {
-    printed_list += todo_item_[i]->ToFile() << "\n";
+    printed_list += todo_item_[i]->ToFile() + "\n";
   }
   return printed_list;
 }
 
 ostream& operator <<(ostream &out, const TodoList &list) {
   for (int i = 0; i < list.GetSize(); i++) {
-    out << i << ". " << list.GetItem(i) << "\n";
+    out << i << ". " << list.GetItem(i) << endl;
   }
-  return out << "\n";
+  return out << endl;
 }
 
 void TodoList::IncreaseCapacity() {
