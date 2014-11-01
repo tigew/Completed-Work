@@ -83,15 +83,17 @@ void TodoList::Sort() {
   }
 }
 
-string ToFile() {
-  return "test";
+string TodoList::ToFile() {
+  string printed_list;
+  for (unsigned int i = 0; i < list_size_; i++) {
+    printed_list += todo_item_[i]->ToFile() << "\n";
+  }
+  return printed_list;
 }
 
 ostream& operator <<(ostream &out, const TodoList &list) {
   for (int i = 0; i < list.GetSize(); i++) {
-    out << list.GetItem(i)->GetDescription() << "\n";
-    out << list.GetItem(i)->GetPriority() << "\n";
-    out << list.GetItem(i)->GetCompleted() << "\n";
+    out << i << ". " << list.GetItem(i) << "\n";
   }
   return out << "\n";
 }

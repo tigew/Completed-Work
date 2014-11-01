@@ -79,8 +79,6 @@ class TodoList {
 
  private:
   void SwapValues(TodoItem* &value_1, TodoItem* &value_2) {
-  // DO NOT ALTER THE NEXT 3 LINES!!!
-    // Code SWAP Algorithm Here
     TodoItem* temp = value_1;
     value_1 = value_2;
     value_2 = temp;
