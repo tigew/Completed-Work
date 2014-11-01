@@ -43,14 +43,14 @@ class TodoList {
    *
    * @return TodoItem pointer
    */
-  TodoItem* GetItem(int location);
+  TodoItem* GetItem(int location) const;
   /**
    * Returns an integer containing the current size of
    * the list (number of items present).
    *
    * @return int - int that contains the current size of list
    */
-  int GetSize();
+  int GetSize() const;
   /**
    * Returns an integer containing the current
    * maximum capacity of the list (number of slots).

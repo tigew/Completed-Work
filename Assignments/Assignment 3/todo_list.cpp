@@ -57,13 +57,13 @@ void TodoList::DeleteItem(int location) {
   }
 }
 
-TodoItem* TodoList::GetItem(int location) {
+TodoItem* TodoList::GetItem(int location) const {
   TodoItem *item;
   item = todo_item_[location - 1];
   return item;
 }
 
-int TodoList::GetSize() {
+int TodoList::GetSize() const {
   return list_size_;
 }
 
@@ -89,7 +89,9 @@ string ToFile() {
 
 ostream& operator <<(ostream &out, const TodoList &list) {
   for (int i = 0; i < list.GetSize(); i++) {
-    out << list.GetItem(i).GetDescription();
+    out << list.GetItem(i)->GetDescription() << "\n";
+    out << list.GetItem(i)->GetPriority() << "\n";
+    out << list.GetItem(i)->GetCompleted() << "\n";
   }
   return out << "\n";
 }

@@ -3,7 +3,7 @@ CXX = /usr/bin/g++
 MAIN = driver
 CPP_FILES = todo_ui.cpp todo_list.cpp todo_item.cpp CinReader.cpp
 H_FILES = todo_ui.h todo_list.h todo_item.h CinReader.h
-CXXFLAGS = -Wall -Wextra -Werror -pedantic -g
+CXXFLAGS = -fdiagnostics-color=auto -Wall -Wextra -Werror -pedantic -g
 
 # Type 'make' to create the executable
 ${MAIN}: ${MAIN}.cpp ${H_FILES} ${CPP_FILES}
