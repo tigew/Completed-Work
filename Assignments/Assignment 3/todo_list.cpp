@@ -17,6 +17,7 @@ TodoList::~TodoList() {
 
 void TodoList::AddItem(TodoItem *item) {
   if (list_size_ == list_capacity_ - 1) {
+    cout << "IncreaseCapacity";
     IncreaseCapacity();
   }
 
@@ -63,9 +64,7 @@ void TodoList::DeleteItem(int location) {
 }
 
 TodoItem* TodoList::GetItem(int location) const {
-  TodoItem *item;
-  item = todo_item_[location - 1];
-  return item;
+  return todo_item_[location - 1];
 }
 
 int TodoList::GetSize() const {
