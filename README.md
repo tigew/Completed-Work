@@ -3,7 +3,7 @@
 Repositroy for all work done in class inc.
 Labs, Assignments, and tools excluding examples
 
-<h3>Completed work as of 10/28</h3>
+<h3>Completed work as of 11/1</h3>
 
 | Lab    | Is done? | Assignment   | Is done? |
 | :----- | :------: | :----------  | :-------:|
@@ -24,3 +24,5 @@ Labs, Assignments, and tools excluding examples
 | Lab 15 |     Y    |
 | Lab 16 |     Y    |
 | Lab 17 |     Y    |
+| Lab 18 |     Y    |
+| Lab 19 |     Y    |
