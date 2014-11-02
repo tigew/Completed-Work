@@ -18,12 +18,12 @@ void TodoUI::menu() {
 
     while (running) {
     cout << "(1) Create New Item\n"
-         << "(2) Edit an Item\n"
-         << "(3) Delete an Item\n"
-         << "(4) View All Items\n"
-         << "(5) View Specific Item\n"
-         << "(6) Delete All Items\n"
-         << "(7) Quit Program\n";
+            << "(2) Edit an Item\n"
+            << "(3) Delete an Item\n"
+            << "(4) View All Items\n"
+            << "(5) View Specific Item\n"
+            << "(6) Delete All Items\n"
+            << "(7) Quit Program\n";
 
     choice = sc.readInt(1, 7);
 
