@@ -3,6 +3,7 @@
 
 TodoList::TodoList()
   : todo_item_(new TodoItem*[25]),
+    list_size_(0),
     list_capacity_(25) {
 }
 
@@ -25,7 +26,9 @@ void TodoList::AddItem(TodoItem *item) {
       break;
     }
   }
+  cout << list_size_ << "\n";
   list_size_++;
+  cout << list_size_ << "\n";
 }
 
 void TodoList::DeleteItem(int location) {
@@ -38,16 +41,17 @@ void TodoList::DeleteItem(int location) {
   delete todo_item_[location - 1];
   todo_item_[location - 1] = NULL;
 
-  for (unsigned int i = 0; i < list_capacity_; i++) {
+  for (unsigned int i = 0; i < list_capacity_ - 1; i++) {
     if (todo_item_[i] == NULL) {
       todo_item_[i] = todo_item_[i + 1];
       todo_item_[i + 1] = NULL;
     }
   }
-
+  cout << list_size_ << "\n";
   list_size_--;
+  cout << list_size_ << "\n";
 
-  for (unsigned int i = 0; i < list_size_; i++) {
+  for (unsigned int i = 0; i < list_capacity_; i++) {
     if (todo_item_[i] == NULL) {
       null_count++;
       if (null_count <= 11) {
@@ -76,8 +80,8 @@ void TodoList::Sort() {
   for (unsigned int i = 0; i <= (list_capacity_ - 1); i++) {
     unsigned int j = i;
 
-    while ((j > 0) && (todo_item_[j]->GetPriority() <
-                       todo_item_[j - 1]->GetPriority())) {
+    while ((j > 0) && (todo_item_[j]->priority() <
+                       todo_item_[j - 1]->priority())) {
         SwapValues(todo_item_[j], todo_item_[j - 1]);
         j = j - 1;
     }

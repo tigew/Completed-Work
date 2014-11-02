@@ -25,33 +25,33 @@ class TodoItem {
    *
    * @param description - Desired description
    */
-  void SetDescription(string description);
+  void set_description(string description);
   /**
    * Sets the private int priority_
    * set the priority to 5 if invalid value is given
    * @param priority - Desired priority
    */
-  void SetPriority(int priority = 5);
+  void set_priority(int priority = 5);
   /**
    * Sets the private bool completed_
    * @param completed - is the task completed or not
    */
-  void SetCompleted(bool completed);
+  void set_completed(bool completed);
   /**
    * Accsesor
    * @return private string description_
    */
-  string GetDescription() const;
+  string description() const;
   /**
    * Accsesor
    * @return private int priority_
    */
-  int GetPriority() const;
+  int priority() const;
   /**
    * Accsesor
    * @return private bool completed_
    */
-  bool GetCompleted() const;
+  bool completed() const;
   /**
    * Returns a string containing the description,
    * priority, and completed status, separated by the @ symbol (This is

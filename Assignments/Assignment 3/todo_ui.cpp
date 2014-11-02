@@ -30,6 +30,7 @@ void TodoUI::menu() {
     switch (choice) {
       case 1:
         TodoItem *item;
+        item = NULL;
 
         cout << "Enter Description" << endl;
         description = sc.readString();
@@ -43,6 +44,7 @@ void TodoUI::menu() {
         item = new TodoItem(description, priority, completed);
 
         todo_list_->AddItem(item);
+        item = NULL;
       break;
 
       case 2:
@@ -64,9 +66,9 @@ void TodoUI::menu() {
         cout << "Is is completed?" << endl;
         completed   = sc.readBool();
 
-        todo_list_->GetItem(choice)->SetDescription(description);
-        todo_list_->GetItem(choice)->SetPriority(priority);
-        todo_list_->GetItem(choice)->SetCompleted(completed);
+        todo_list_->GetItem(choice)->set_description(description);
+        todo_list_->GetItem(choice)->set_priority(priority);
+        todo_list_->GetItem(choice)->set_completed(completed);
       break;
 
       case 3:
@@ -108,7 +110,7 @@ void TodoUI::menu() {
         if (!are_you_sure) {
           break;
         }
-        for (int i = 0; i < todo_list_->GetSize(); i++) {
+        for (int i = 1; i < todo_list_->GetSize(); i++) {
           todo_list_->DeleteItem(i);
         }
       break;
@@ -117,6 +119,6 @@ void TodoUI::menu() {
         running = false;
       break;
     }
-    ClearScreen();
+    //ClearScreen();
   }
 }
