@@ -27,9 +27,9 @@ void TodoList::AddItem(TodoItem *item) {
       break;
     }
   }
-  cout << list_size_ << "\n";
+  cout << "List size before: " << list_size_ << "\n";
   list_size_++;
-  cout << list_size_ << "\n";
+  cout << "List size before: " << list_size_ << "\n";
 }
 
 void TodoList::DeleteItem(int location) {
@@ -48,9 +48,9 @@ void TodoList::DeleteItem(int location) {
       todo_item_[i + 1] = NULL;
     }
   }
-  cout << list_size_ << "\n";
+  cout << "List size before: " << list_size_ << "\n";
   list_size_--;
-  cout << list_size_ << "\n";
+  cout << "List size before: " << list_size_ << "\n";
 
   for (unsigned int i = 0; i < list_capacity_; i++) {
     if (todo_item_[i] == NULL) {

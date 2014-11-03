@@ -120,21 +120,21 @@ void UnitTest() {
 
   try {
     Sum(my_array, my_array_size);
-  } catch (const char* e) {
+  } catch(const char* e) {
     Test(!strcmp(e, "NULL ARRAY REFERENCE"), __LINE__,
          "Sum() EXCEPTION HANDLING");
   }
 
   try {
     Min(my_array, my_array_size);
-  } catch (const char* e) {
+  } catch(const char* e) {
     Test(!strcmp(e, "NULL ARRAY REFERENCE"), __LINE__,
          "Min() EXCEPTION HANDLING");
   }
 
   try {
     Max(my_array, my_array_size);
-  } catch (const char* e) {
+  } catch(const char* e) {
     Test(!strcmp(e, "NULL ARRAY REFERENCE"), __LINE__,
          "Max() EXCEPTION HANDLING");
   }
