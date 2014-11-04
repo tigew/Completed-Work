@@ -4,6 +4,7 @@
 #include "todo_item.h"
 #include <string>
 #include <iostream>
+#include <assert.h>
 
 using std::string;
 using std::cout;

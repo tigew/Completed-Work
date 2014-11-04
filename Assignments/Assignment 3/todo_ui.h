@@ -2,6 +2,7 @@
 #define TODO_UI_H
 
 #include <iostream>
+#include <assert.h>
 #include "CinReader.h"
 #include "todo_list.h"
 #include "todo_item.h"

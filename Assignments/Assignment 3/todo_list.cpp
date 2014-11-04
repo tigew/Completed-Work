@@ -16,8 +16,8 @@ TodoList::~TodoList() {
 }
 
 void TodoList::AddItem(TodoItem *item) {
-  if (list_size_ == list_capacity_ - 1) {
-    cout << "IncreaseCapacity";
+  if (list_size_ == (list_capacity_ - 1)) {
+    cout << "IncreaseCapacity\n";
     IncreaseCapacity();
   }
 
@@ -27,9 +27,9 @@ void TodoList::AddItem(TodoItem *item) {
       break;
     }
   }
-  cout << "List size before: " << list_size_ << "\n";
+  cout << "List size before add: " << list_size_ << "\n";
   list_size_++;
-  cout << "List size before: " << list_size_ << "\n";
+  cout << "List size after  add: " << list_size_ << "\n";
 }
 
 void TodoList::DeleteItem(int location) {
@@ -48,9 +48,9 @@ void TodoList::DeleteItem(int location) {
       todo_item_[i + 1] = NULL;
     }
   }
-  cout << "List size before: " << list_size_ << "\n";
+  cout << "List size before delete: " << list_size_ << "\n";
   list_size_--;
-  cout << "List size before: " << list_size_ << "\n";
+  cout << "List size arter  delete: " << list_size_ << "\n";
 
   for (unsigned int i = 0; i < list_capacity_; i++) {
     if (todo_item_[i] == NULL) {
@@ -64,6 +64,7 @@ void TodoList::DeleteItem(int location) {
 }
 
 TodoItem* TodoList::GetItem(int location) const {
+  assert((location - 1) > -1);
   return todo_item_[location - 1];
 }
 

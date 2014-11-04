@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <assert.h>
 
 using std::string;
 using std::endl;
