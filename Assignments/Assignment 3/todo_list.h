@@ -95,7 +95,7 @@ class TodoList {
    * Compacts the array to get rid of an empty spot in the array.
    * Should be called by DeleteItem at the appropriate time.
    */
-  void DecreaseCapacity();
+  void DecreaseCapacity(int location);
 
   TodoItem **todo_item_;
   unsigned int list_size_;

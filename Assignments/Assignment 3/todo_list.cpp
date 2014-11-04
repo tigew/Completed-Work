@@ -16,20 +16,14 @@ TodoList::~TodoList() {
 }
 
 void TodoList::AddItem(TodoItem *item) {
-  if (list_size_ == (list_capacity_ - 1)) {
+  if (list_size_ == list_capacity_) {
     cout << "IncreaseCapacity\n";
     IncreaseCapacity();
   }
 
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    if (todo_item_[i] == NULL) {
-      todo_item_[i] = item;
-      break;
-    }
-  }
-  cout << "List size before add: " << list_size_ << "\n";
+  todo_item_[list_size_] = item;
+
   list_size_++;
-  cout << "List size after  add: " << list_size_ << "\n";
 }
 
 void TodoList::DeleteItem(int location) {
@@ -37,34 +31,16 @@ void TodoList::DeleteItem(int location) {
     return;
   }
 
-  unsigned int null_count = 0;
-
   delete todo_item_[location - 1];
-  todo_item_[location - 1] = NULL;
 
-  for (unsigned int i = 0; i < list_capacity_ - 1; i++) {
-    if (todo_item_[i] == NULL) {
-      todo_item_[i] = todo_item_[i + 1];
-      todo_item_[i + 1] = NULL;
-    }
-  }
-  cout << "List size before delete: " << list_size_ << "\n";
+  todo_item_[list_size_ - 1] = NULL;
+
+  DecreaseCapacity(location);
+
   list_size_--;
-  cout << "List size arter  delete: " << list_size_ << "\n";
-
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    if (todo_item_[i] == NULL) {
-      null_count++;
-      if (null_count <= 11) {
-        DecreaseCapacity();
-        break;
-      }
-    }
-  }
 }
 
 TodoItem* TodoList::GetItem(int location) const {
-  assert((location - 1) > -1);
   return todo_item_[location - 1];
 }
 
@@ -97,8 +73,8 @@ string TodoList::ToFile() {
 }
 
 ostream& operator <<(ostream &out, const TodoList &list) {
-  for (int i = 0; i < list.GetSize(); i++) {
-    out << i << ". " << list.GetItem(i) << endl;
+  for (unsigned int i = 1; i < list.list_size_; i++) {
+    out << i << ". " << list.GetItem(i - 1) << endl;
   }
   return out << endl;
 }
@@ -106,67 +82,27 @@ ostream& operator <<(ostream &out, const TodoList &list) {
 void TodoList::IncreaseCapacity() {
   TodoItem **temp_items = new TodoItem*[list_capacity_ + 10];
 
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    temp_items[i] = todo_item_[i];
-  }
-
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    delete todo_item_[i];
-    todo_item_[i] = NULL;
-  }
-  delete[] todo_item_;
-
-  // todo_item_ = new TodoItem*[list_capacity_ + 10];
-  todo_item_ = temp_items;
-
-  /*
-  for (int i = 0; list_capacity_ + 10; i++) {
-    todo_item_[i] = NULL;
-  }
-
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    todo_item_[i] = temp_items[i];
-  }*/
-
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    delete temp_items[i];
-    temp_items[i] = NULL;
-  }
-  delete[] temp_items;
-
-  list_capacity_ += 10;
-}
-
-void TodoList::DecreaseCapacity() {
-  TodoItem **temp_items = new TodoItem*[list_capacity_ - 10];
-
   for (unsigned int i = 0; i < list_size_; i++) {
     temp_items[i] = todo_item_[i];
   }
 
-  for (unsigned int i = 0; i < list_capacity_; i++) {
+  for (unsigned int i = 0; i < list_size_; i++) {
     delete todo_item_[i];
     todo_item_[i] = NULL;
   }
   delete[] todo_item_;
 
-  // todo_item_ = new TodoItem*[list_capacity_ - 10];
   todo_item_ = temp_items;
 
-/*
-  for (int i = 0; list_capacity_ - 10; i++) {
+  for (unsigned int i = list_size_; i < list_capacity_ + 10; i++) {
     todo_item_[i] = NULL;
   }
 
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    todo_item_[i] = temp_items[i];
-  } */
+  list_capacity_ += 10;
+}
 
-  for (unsigned int i = 0; i < list_capacity_; i++) {
-    delete temp_items[i];
-    temp_items[i] = NULL;
+void TodoList::DecreaseCapacity(int location) {
+  for (unsigned int i = location - 1; i < list_size_ - 1; i++) {
+    todo_item_[i] = todo_item_[i + 1];
   }
-  delete[] temp_items;
-
-  list_capacity_ -= 10;
 }
