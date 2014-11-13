@@ -17,7 +17,6 @@ TodoList::~TodoList() {
 
 void TodoList::AddItem(TodoItem *item) {
   if (list_size_ == list_capacity_) {
-    cout << "IncreaseCapacity\n";
     IncreaseCapacity();
   }
 
@@ -67,7 +66,9 @@ void TodoList::Sort() {
 string TodoList::ToFile() {
   string printed_list;
   for (unsigned int i = 0; i < list_size_; i++) {
+    cout << "in list for\n";
     printed_list += todo_item_[i]->ToFile() + "\n";
+    cout << i << endl;
   }
   return printed_list;
 }

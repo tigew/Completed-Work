@@ -128,7 +128,6 @@ void UnitTest() {
           "Description #25@3@0\n";
   Test(list.ToFile() == to_file, "ToFile()");
   cout << "Testing Overloaded <<:\n" << list << endl;
-
   list.DeleteItem(15);
   Test(list.GetSize() == 24, "DeleteItem(15) / GetSize()");
   Test(list.GetCapacity() == 25, "GetCapacity()");

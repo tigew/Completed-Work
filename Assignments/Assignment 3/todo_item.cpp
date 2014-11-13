@@ -41,14 +41,15 @@ bool TodoItem::completed() const {
 string TodoItem::ToFile() {
   stringstream ss;
 
-  ss << Scrub(description_) << "@" << priority_ << "@" << completed_;
+  string scrubbed = Scrub(description_);
+  ss << scrubbed << "@" << priority_ << "@" << completed_;
   return ss.str();
 }
 
 ostream& operator <<(ostream &out, const TodoItem &item) {
   out << "Description: " << item.description() << endl;
-  out << "Priority: "        << item.priority()       << endl;
-  out << "Completed: "  << item.completed() << endl;
+  out << "Priority: "    << item.priority()       << endl;
+  out << "Completed: "   << item.completed() << endl;
   return out;
 }
 
