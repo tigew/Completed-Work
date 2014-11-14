@@ -7,6 +7,7 @@
 
 #include "sl_list.h"
 
+
 SLList::SLList()
   : head_(NULL),
     tail_(NULL),

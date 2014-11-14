@@ -7,6 +7,7 @@
 
 #include "sl_node.h"
 
+
 SLNode::SLNode()
   : next_node_(NULL),
     contents_(0) {
