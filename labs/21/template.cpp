@@ -76,7 +76,7 @@ template<typename T>
 T ValueAt(T value[], unsigned int size, unsigned int index, bool &error) {
   error = false;
   T return_value;
-  if (index <= size) {
+  if (index < size) {
     return_value = value[index];
   } else {
     error = true;
@@ -96,9 +96,6 @@ T ValueAt(T value[], unsigned int size, unsigned int index, bool &error) {
 template<typename T>
 T Sum(T values[], unsigned int size) {
   T return_value = T();
-  if (size > 0) {
-    return T();
-  }
 
   for (unsigned int i = 0; i < size; i++) {
     return_value += values[i];
