@@ -25,13 +25,16 @@ using std::stringstream;
  *                  specified separator character
  */
 template<typename T>
-string PrepareForDisplay(T values[], unsigned int size, char seperator) {
+string PrepareForDisplay(T values[], unsigned int size, char seperator = ',') {
   stringstream ss;
-  for(unsigned int i = 0; i < size; ++i) {
-    if(i == size - 1) {
+  ss.setf(std::ios::showpoint | std::ios::fixed);
+  ss.precision(2);
+  for (unsigned int i = 0; i < size; ++i) {
+    if (i == size - 1) {
       ss << values[i];
+    } else {
+      ss << values[i] << seperator;
     }
-    ss << values[i] << seperator;
   }
   return ss.str();
 }
@@ -45,10 +48,10 @@ string PrepareForDisplay(T values[], unsigned int size, char seperator) {
  * @return bool - true if value is found in the array, otherwise false
  */
 template<typename T>
-bool HasValue(T values, unsigned int size, T value_to_find) {
+bool HasValue(T values[], unsigned int size, T value_to_find) {
   bool contains_values = false;
-  for(unsigned int i = 0; i < size; ++i) {
-    if(values[i] == value_to_find) {
+  for (unsigned int i = 0; i < size; ++i) {
+    if (values[i] == value_to_find) {
       contains_values = true;
     }
   }
@@ -70,10 +73,16 @@ bool HasValue(T values, unsigned int size, T value_to_find) {
  *               you can return T()
  */
 template<typename T>
-T ValueAt(T value, unsigned int size, unsigned int index, bool error) {
-  stringstream ss;
-  ss << value[index] << size << error;
-  return ss.str();
+T ValueAt(T value[], unsigned int size, unsigned int index, bool &error) {
+  error = false;
+  T return_value;
+  if (index <= size) {
+    return_value = value[index];
+  } else {
+    error = true;
+    return_value = T();
+  }
+  return return_value;
 }
 
 /*
@@ -85,13 +94,13 @@ T ValueAt(T value, unsigned int size, unsigned int index, bool error) {
  * @return T - The sum of the values in the array
  */
 template<typename T>
-T Sum(T values, unsigned int size) {
+T Sum(T values[], unsigned int size) {
   T return_value = T();
-  if(size > 0) {
+  if (size > 0) {
     return T();
   }
 
-  for(unsigned int i = 0; i < size; i++) {
+  for (unsigned int i = 0; i < size; i++) {
     return_value += values[i];
   }
   return return_value;
@@ -108,7 +117,17 @@ T Sum(T values, unsigned int size) {
  * @return bool - true if the swap was successful, otherwise false
  */
 template<typename T>
-bool SwapValues(T values, unsigned int size, unsigned int index1,
+bool SwapValues(T values[], unsigned int size, unsigned int index1,
                 unsigned int index2) {
+  bool swap_worked = false;
+  if (index1 <= size && index2 <= size) {
+    T temp_index = values[index2];
+    values[index2] = values[index1];
+    values[index1] = temp_index;
+    swap_worked = true;
+  } else {
+    swap_worked = false;
+  }
+  return swap_worked;
 }
 
