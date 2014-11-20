@@ -84,6 +84,36 @@ int main() {
 
 // CODE FUNCTION DEFINITIONS HERE
 
+unsigned int Factorial(unsigned int value) {
+  if (value == 0 || value == 1) {
+    return 1;
+  } else {
+    return value * Factorial(value - 1);
+  }
+}
+
+unsigned int Fibonacci(unsigned int fib_value) {
+  if (fib_value == 0) {
+    return 0;
+  } else if (fib_value == 1) {
+    return 1;
+  } else {
+    return Fibonacci(fib_value - 1) + Fibonacci(fib_value - 2);
+  }
+}
+
+bool WordIsPalindrome(string word) {
+  return false;
+}
+
+string ArrayForwardsAsString(int array[], unsigned int start,
+    unsigned int size) {
+  return "Stuff";
+}
+
+string ArrayBackwardsAsString(int array[], int start, unsigned int size) {
+  return "stuff";
+}
 
 // For testing (DO NOT ALTER)
 void UnitTest() {
