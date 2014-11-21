@@ -103,16 +103,36 @@ unsigned int Fibonacci(unsigned int fib_value) {
 }
 
 bool WordIsPalindrome(string word) {
-  return false;
+  if (word.length() <=  0) {
+    return true;
+  } else {
+    if (word.at(0) == word.at(word.length() - 1)) {
+      return WordIsPalindrome(word.substr(1, word.length() - 2));
+    } else {
+      return false;
+    }
+  }
 }
 
 string ArrayForwardsAsString(int array[], unsigned int start,
     unsigned int size) {
-  return "Stuff";
+  stringstream ss;
+  if (start == size) {
+    return "";
+  } else {
+    ss << array[start] << " " << ArrayForwardsAsString(array, start + 1, size);
+    return ss.str();
+  }
 }
 
 string ArrayBackwardsAsString(int array[], int start, unsigned int size) {
-  return "stuff";
+  stringstream ss;
+  if (start <= -1) {
+    return "";
+  } else {
+    ss << array[start] << " " << ArrayBackwardsAsString(array, start - 1, size);
+    return ss.str();
+  }
 }
 
 // For testing (DO NOT ALTER)
