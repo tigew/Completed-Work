@@ -14,7 +14,7 @@ DLList::DLList()
 }
 
 DLList::~DLList() {
-
+  Clear();
 }
 
 int DLList::GetSize() const {
@@ -52,7 +52,6 @@ int DLList::RemoveAll(int remove) {
 }
 
 bool DLList::Exists(int looking_for) {
-  return looking_for;
 }
 
 void DLList::Clear() {
