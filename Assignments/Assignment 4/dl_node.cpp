@@ -11,7 +11,6 @@ DLNode::DLNode()
   : next_node_(NULL),
     previous_node_(NULL),
     contents_(0) {
-
 }
 
 DLNode::~DLNode() {

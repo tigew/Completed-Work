@@ -12,18 +12,18 @@
 
 class DLNode {
  public:
-   DLNode();
-   ~DLNode();
-   void SetContents(int contents);
-   void SetNext(DLNode* next);
-   void SetPrevious(DLNode* previous);
-   int GetContents() const;
-   DLNode* GetNext() const;
-   DLNode* GetPrevious() const;
+  DLNode();
+  ~DLNode();
+  void SetContents(int contents);
+  void SetNext(DLNode* next);
+  void SetPrevious(DLNode* previous);
+  int GetContents() const;
+  DLNode* GetNext() const;
+  DLNode* GetPrevious() const;
  private:
   DLNode* next_node_;
   DLNode* previous_node_;
   int contents_;
 };
 
-#endif //  DL_NODE_H
+#endif  //  DL_NODE_H
