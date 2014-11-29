@@ -28,6 +28,8 @@ void DLList::PushFront(int new_contents) {
 		head_ = tail_ = node;
 	} else {
 		node->SetNext(head_);
+    head_->SetPrevious(node);
+    node->SetPrevious(tail_);
 		head_ = node;
 		tail_->SetNext(head_);
 	}
@@ -41,16 +43,17 @@ void DLList::PushBack(int new_contents) {
 		head_ = tail_ = node;
 	}
 	else {
-		node->SetNext(node);
+		node->SetNext(head_);
+    node->SetPrevious(tail_);
+    tail_->SetNext(node);
 		tail_ = node;
-		tail_->SetNext(head_);
 	}
 	size_++;
 }
 
 int DLList::GetFront() const {
 	if (head_ != NULL) {
-		head_->GetContents();
+		return head_->GetContents();
 	} else {
 		return 0;
 	}
@@ -58,7 +61,7 @@ int DLList::GetFront() const {
 
 int DLList::GetBack() const {
 	if (tail_ != NULL) {
-		tail_->GetContents();
+		return tail_->GetContents();
 	}
 	else {
 		return 0;
@@ -72,9 +75,12 @@ void DLList::PopFront() {
 	else {
 		DLNode* temp = head_;
 		head_ = temp->GetNext();
+    head_->SetPrevious(tail_);
 		delete temp;
+    temp = NULL;
 		size_--;
 		if (size_ == 0) {
+      std::cout << "List Empty" << std::endl;
 			head_ = NULL;
 			tail_ = NULL;
 		}
@@ -82,12 +88,15 @@ void DLList::PopFront() {
 }
 
 void DLList::PopBack() {
+  if (size_== 0) {
+    std::cout << "List Empty" << std::endl;
+    return;
+  }
 	if (tail_ != NULL && head_ != tail_) {
-		DLNode* iter = head_;
-		for (; iter->GetNext() != tail_; iter = iter->GetNext()) {}
+		DLNode* node = tail_->GetPrevious();
+    tail_->GetPrevious()->SetNext(head_);
 		delete tail_;
-		tail_ = iter;
-		tail_->SetNext(NULL);
+		tail_ = node;
 		size_--;
 	}
 	else if (tail_ == head_) {
@@ -97,15 +106,62 @@ void DLList::PopBack() {
 	}
 }
 
-int DLList::RemoveFirst(int remove) {
-	return remove;
+void DLList::RemoveFirst(int remove) {
+  if (head_ != NULL) {
+    DLNode* iter = head_;
+    for (unsigned int i = 0; i < size_; i++) {
+      if (iter->GetContents() == remove) {
+        if (remove == head_->GetContents()) {
+          PopFront();
+          break;
+        } else if (remove == tail_->GetContents()) {
+          PopBack();
+          break;
+        } else {
+          iter->GetPrevious()->SetNext(iter->GetNext());
+          iter->GetNext()->SetPrevious(iter->GetPrevious());
+          delete iter;
+          iter = NULL;
+          break;
+        }
+        iter = iter->GetNext();
+      }
+      if (i == size_) {
+        std::cout << "Not Found" << std::endl;
+      }
+    }
+  } else {
+    return;
+  }
+  return;
 }
 
-int DLList::RemoveAll(int remove) {
-	return remove;
+void DLList::RemoveAll(int remove) {
+  if (head_ != NULL) {
+    DLNode* iter = head_;
+    for (unsigned int i = 0; i < size_; i++) {
+      if (iter->GetContents() == remove) {
+        if (remove == head_->GetContents()) {
+          PopFront();
+        } else if (remove == tail_->GetContents()) {
+          PopBack();
+        } else {
+          iter->GetPrevious()->SetNext(iter->GetNext());
+          iter->GetNext()->SetPrevious(iter->GetPrevious());
+          delete iter;
+          iter = NULL;
+        }
+        iter = iter->GetNext();
+      }
+    }
+  } else {
+    return;
+  }
+  return;
 }
 
 bool DLList::Exists(int looking_for) {
+  std::cout << looking_for;
 	return true;
 }
 
@@ -119,12 +175,11 @@ void DLList::Clear() {
 				tail_ = NULL;
 			}
 			DLNode* iterator = head_->GetNext();
-			size_--;
 			delete head_;
 			head_ = iterator;
 		}
 	}
-	//size_ = 0;
+	size_ = 0;
 }
 
 string DLList::ToStringForwards() {

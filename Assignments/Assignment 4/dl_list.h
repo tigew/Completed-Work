@@ -26,8 +26,8 @@ class DLList {
    int GetBack() const;
    void PopFront();
    void PopBack();
-   int RemoveFirst(int remove);
-   int RemoveAll(int remove);
+   void RemoveFirst(int remove);
+   void RemoveAll(int remove);
    bool Exists(int looking_for);
    void Clear();
    string ToStringForwards();

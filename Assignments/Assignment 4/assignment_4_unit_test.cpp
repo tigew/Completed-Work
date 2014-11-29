@@ -9,6 +9,7 @@
 #include "dl_node.h"
 
 #include <iostream>
+#include <sstream>
 using std::cout;
 using std::endl;
 using std::string;
