@@ -157,8 +157,20 @@ void DLList::RemoveAll(int remove) {
 }
 
 bool DLList::Exists(int looking_for) {
-  cout << looking_for;
-  return true;
+  bool return_bool = false;
+  if (head_ != NULL) {
+    DLNode* iter = head_;
+    for (unsigned int i = 0; i < size_; i++) {
+      if (iter->GetContents() == looking_for) {
+        if (iter->GetContents() == looking_for) {
+          return_bool = true;
+          break;
+        }
+        iter = iter->GetNext();
+      }
+    }
+  }
+  return return_bool;
 }
 
 void DLList::Clear() {
