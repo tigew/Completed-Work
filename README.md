@@ -10,7 +10,7 @@ Labs, Assignments, and tools excluding examples
 | Lab 1  |     Y    | Assignment 1 |     Y    |
 | Lab 2  |     Y    | Assignment 2 |     Y    |
 | Lab 3  |     Y    | Assignment 3 |     N    |
-| Lab 4  |     Y    |
+| Lab 4  |     Y    | Assignment 4 |     N    |
 | Lab 5  |     Y    |
 | Lab 6  |     Y    |
 | Lab 7  |     Y    |
@@ -26,3 +26,7 @@ Labs, Assignments, and tools excluding examples
 | Lab 17 |     Y    |
 | Lab 18 |     Y    |
 | Lab 19 |     Y    |
+| Lab 20 |     Y    |
+| Lab 21 |     Y    |
+| Lab 22 |     Y    |
+| Lab 23 |     Y    |
