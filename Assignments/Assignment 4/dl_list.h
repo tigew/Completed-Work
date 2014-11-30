@@ -12,7 +12,7 @@
 #include <sstream>
 #include "dl_node.h"
 
-using std::cout;
+using std::cerr;
 using std::string;
 using std::stringstream;
 
