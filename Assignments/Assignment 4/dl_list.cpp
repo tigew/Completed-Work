@@ -85,7 +85,7 @@ int DLList::GetBack() const {
 
 void DLList::PopFront() {
 	if (head_ == NULL) {
-    cerr << "List Empty";
+		cerr << "List Empty";
 		return;
 	}
 	else {
@@ -123,70 +123,63 @@ void DLList::PopBack() {
 }
 
 void DLList::RemoveFirst(int remove) {
-  bool found_number = false;
+	bool found_number = false;
 	if (head_ != NULL) {
 		DLNode* iter = head_;
 		for (unsigned int i = 0; i < size_; i++) {
 			if (iter->GetContents() == remove) {
-        found_number = true;
-				if (remove == head_->GetContents()) {
+				found_number = true;
+				if (remove == head_->GetContents() && iter == head_) {
 					PopFront();
 					break;
 				}
-				else if (remove == tail_->GetContents()) {
+				if (remove == tail_->GetContents() && iter == tail_) {
 					PopBack();
 					break;
 				}
 				else {
 					iter->GetPrevious()->SetNext(iter->GetNext());
 					iter->GetNext()->SetPrevious(iter->GetPrevious());
-					delete iter;
-					iter = NULL;
+					//delete iter;
+					//iter = NULL;
+					size_--;
 					break;
 				}
-				iter = iter->GetNext();
 			}
+			iter = iter->GetNext();
 		}
 	}
 	else {
 		cerr << "Not Found";
 		return;
 	}
-  if (found_number == true) {
-    cerr << "Not Found";
-  }
+	if (found_number == false) {
+		cerr << "Not Found";
+	}
 }
 
 void DLList::RemoveAll(int remove) {
-  bool found_number = false;
+	bool found_number = false;
+	unsigned int loop_til = size_;
 	if (head_ != NULL) {
 		DLNode* iter = head_;
-		for (unsigned int i = 0; i < size_; i++) {
+		for (unsigned int i = 0; i < loop_til; i++) {
 			if (iter->GetContents() == remove) {
-        found_number = true;
-				if (remove == head_->GetContents()) {
-					PopFront();
-				}
-				else if (remove == tail_->GetContents()) {
-					PopBack();
-				}
-				else {
+				found_number = true;
 					iter->GetPrevious()->SetNext(iter->GetNext());
 					iter->GetNext()->SetPrevious(iter->GetPrevious());
-					delete iter;
-					iter = NULL;
-				}
-				iter = iter->GetNext();
+					size_--;
 			}
+			iter = iter->GetNext();
 		}
 	}
 	else {
 		cerr << "Not Found";
 		return;
 	}
-  if (found_number == true) {
-    cerr << "Not Found";
-  }
+	if (found_number == false) {
+		cerr << "Not Found";
+	}
 }
 
 bool DLList::Exists(int looking_for) {
@@ -208,23 +201,25 @@ void DLList::Clear() {
 	if (head_ == NULL && tail_ == NULL) {
 		return;
 	}
-	else {
-		while (head_ != NULL) {
-			if (tail_ == head_) {
-				tail_ = NULL;
-			}
-			DLNode* iterator = head_->GetNext();
-			delete head_;
-			head_ = iterator;
+	DLNode* iter = head_;
+	for (unsigned int i = 0; i < size_; i++)
+	{
+		if (head_->GetNext() != NULL)
+		{
+			iter = head_->GetNext();
 		}
+		delete head_;
+		head_ = iter;
 	}
+	head_ = NULL;
+	tail_ = NULL;
 	size_ = 0;
 }
 
 string DLList::ToStringForwards() {
 	stringstream ss;
 	if (size_ == 0) {
-    cerr << "List Empty";
+		cerr << "List Empty";
 		ss << "";
 	}
 	else {
@@ -244,7 +239,7 @@ string DLList::ToStringForwards() {
 string DLList::ToStringBackwards() {
 	stringstream ss;
 	if (size_ == 0) {
-    cerr << "List Empty";
+		cerr << "List Empty";
 		ss << "";
 	}
 	else {
