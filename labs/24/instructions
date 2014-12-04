@@ -1,4 +1,4 @@
-Declare and implement a class that provides the following interface EXACTLY.
+eclare and implement a class that provides the following interface EXACTLY.
 You will create 2 new files, bs_tree.h and bs_tree.cpp
 You will also need to use your bst_node.h and bst_node.cpp from the previous exercises.
 
@@ -12,28 +12,28 @@ private data members:
 public function interface:
 
 	default constructor, sets the root to NULL and size to 0
-	
+
 	destructor, calls the Clear function
-	
+
 	bool Insert(int), calls private function Insert(int, root)
-	
+
 	void Clear(), call private function Clear(root)
-	
+
 	unsigned int GetSize() const
-	
+
 	string InOrder (), call private function InOrder(root)
-	
+
 private function interface:
 
-	bool Insert (int, BSTNode*&), Create a new BSTNode and insert it into the tree, returns 
+	bool Insert (int, BSTNode*&), Create a new BSTNode and insert it into the tree, returns
 								  true; if integer is already in the true, does not insert,
 								  returns false
-	
+
 	void Clear (BSTNode*&), Clear the entire contents of the tree, freeing all memory
 							associated with all nodes
-	
+
 	string InOrder (BSTNode*), Creates a string of the data in all nodes in the tree,
-							   in ascending order, separate by spaces (there should be a 
+							   in ascending order, separate by spaces (there should be a
 							   space after the last output value)
 
 A Makefile has been included with this exercise. Your options are:
