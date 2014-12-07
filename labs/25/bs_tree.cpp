@@ -67,11 +67,10 @@ bool BSTree::Remove(int contents, BSTNode*& node) {
       node = node->GetLeftChild();
       delete temp_node;
       temp_node = NULL;
-    } else { // Has 2 Children
-      // Segfaulting in here.
+    } else { // Has 2 Children, seg faulting right here.
       int temp_value = FindMin(root_->GetRightChild());
       node->SetContents(temp_value);
-      return Remove(temp_value, node);
+      return Remove(temp_value, node->GetLeftChild());
     }
     size_--;
     return true;
