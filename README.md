@@ -30,3 +30,5 @@ Labs, Assignments, and tools excluding examples
 | Lab 21 |     Y    |
 | Lab 22 |     Y    |
 | Lab 23 |     Y    |
+| Lab 24 |     Y    |
+| Lab 25 |     Y    |
