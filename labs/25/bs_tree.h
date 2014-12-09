@@ -28,7 +28,7 @@ class BSTree {
     bool Insert(int contents, BSTNode*& node);
     bool Remove(int contents, BSTNode*& node);
     BSTNode* FindMinSub(BSTNode* node);
-    int FindMin(BSTNode*);
+    int FindMin(BSTNode* node);
     void Clear(BSTNode*& node);
     string InOrder(BSTNode* node);
 };

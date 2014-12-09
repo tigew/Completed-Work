@@ -67,7 +67,7 @@ bool BSTree::Remove(int contents, BSTNode*& node) {
       node = node->GetLeftChild();
       delete temp_node;
       temp_node = NULL;
-    } else { // Has 2 Children, seg faulting right here.
+    } else {
       int temp_value = FindMin(root_->GetRightChild());
       node->SetContents(temp_value);
       return Remove(temp_value, node->GetLeftChild());
@@ -78,14 +78,6 @@ bool BSTree::Remove(int contents, BSTNode*& node) {
     return Remove(contents, node->GetRightChild());
   } else {
     return Remove(contents, node->GetLeftChild());
-  }
-}
-
-BSTNode* BSTree::FindMinSub(BSTNode* node) {
-  if (node->GetLeftChild() == NULL) {
-    return node;
-  } else {
-    return FindMinSub(node->GetLeftChild());
   }
 }
 
@@ -111,7 +103,7 @@ void BSTree::Clear(BSTNode*& node) {
   }
 }
 
-string BSTree::InOrder(BSTNode* node){
+string BSTree::InOrder(BSTNode* node) {
   stringstream ss;
   if (node != NULL) {
     ss << InOrder(node->GetLeftChild());
