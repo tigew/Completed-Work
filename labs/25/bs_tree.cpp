@@ -70,7 +70,7 @@ bool BSTree::Remove(int contents, BSTNode*& node) {
     } else {
       int temp_value = FindMin(root_->GetRightChild());
       node->SetContents(temp_value);
-      return Remove(temp_value, node->GetLeftChild());
+      return Remove(temp_value, node->GetRightChild());
     }
     size_--;
     return true;
