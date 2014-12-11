@@ -1,8 +1,8 @@
-# Makefile for Exercise 1
+# Makefile for Assignment 3
 CXX = /usr/bin/g++
-MAIN = lab_1
+MAIN = assignment_5_unit_test
 CPP_FILES =
-H_FILES =
+H_FILES = bs_nodet.h bs_treet.h
 CXXFLAGS = -Wall -Wextra -Werror -pedantic -g
 
 # Type 'make' to create the executable
@@ -17,4 +17,3 @@ style: ../../helpful_files/cpplint.py ${FILE}
 # Type 'make clean' to remove the executable
 clean:
 	rm -rf ${MAIN}
-
