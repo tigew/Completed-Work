@@ -9,7 +9,7 @@
 using std::string;
 using std::stringstream;
 
-template<typename T>
+template<class T>
 class BSTreeT {
  public:
   BSTreeT();
@@ -35,83 +35,83 @@ class BSTreeT {
   BSTNodeT<T> root_;
 };
 
-template<typename T>
+template<class T>
 BSTreeT<T>::BSTreeT() {
 
 }
 
-template<typename T>
+template<class T>
 BSTreeT<T>::~BSTreeT() {
   Clear();
 }
 
-template<typename T>
+template<class T>
 unsigned int BSTreeT<T>::GetSize() const {
   return size_;
 }
 
-template<typename T>
+template<class T>
 void BSTreeT<T>::Clear() {
   Clear(root_);
 }
 
-template<typename T>
+template<class T>
 unsigned int BSTreeT<T>::Insert(T contents) {
   return Insert(contents, root_);
 }
 
-template<typename T>
+template<class T>
 bool BSTreeT<T>::Exists(T looking_for) {
   return Exists(looking_for, root_);
 }
 
-template<typename T>
+template<class T>
 int BSTreeT<T>::Remove(T remove_me) {
   return Remove(remove_me, root_);
 }
 
-template<typename T>
+template<class T>
 BSTNodeT<T>* BSTreeT<T>::Get(T contents) {
   return Get(contents, root_);
 }
 
-template<typename T>
+template<class T>
 string BSTreeT<T>::ToStringForwards() {
   return ToStringForwards(root_);
 }
 
-template<typename T>
+template<class T>
 string BSTreeT<T>::ToStringBackwards() {
   return ToStringBackwards(root_);
 }
 
 
 //private functions
-template<typename T>
+template<class T>
 void BSTreeT<T>::Clear(BSTNodeT<T>* node) {
 }
 
-template<typename T>
+template<class T>
 unsigned int BSTreeT<T>::Insert(T contents, BSTNodeT<T>* node) {
 }
 
-template<typename T>
+template<class T>
 bool BSTreeT<T>::Exists(T looking_for, BSTNodeT<T>* node) {
 }
 
-template<typename T>
+template<class T>
 int BSTreeT<T>::Remove(T remove_me, BSTNodeT<T>* node) {
 }
 
-template<typename T>
+template<class T>
 BSTNodeT<T>* BSTreeT<T>::Get(T contents, BSTNodeT<T> node) {
 }
 
-template<typename T>
+template<class T>
 string BSTreeT<T>::ToStringForwards(BSTNodeT<T>* node) {
 }
 
-template<typename T>
+template<class T>
 string BSTreeT<T>::ToStringBackwards(BSTNodeT<T>* node) {
 }
 

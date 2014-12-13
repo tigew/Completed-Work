@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-template<typename T>
+template<class T>
 class BSTNodeT {
  public:
   BSTNodeT();
@@ -24,7 +24,7 @@ class BSTNodeT {
   BSTNodeT* right_;
 };
 
-template<typename T>
+template<class T>
 BSTNodeT<T>::BSTNodeT()
   : contents_(T()),
     total_added_(0),
@@ -32,7 +32,7 @@ BSTNodeT<T>::BSTNodeT()
     right_(NULL) {
 }
 
-template<typename T>
+template<class T>
 BSTNodeT<T>::BSTNodeT(T contents)
   : contents_(contents),
     total_added_(0),
@@ -40,48 +40,48 @@ BSTNodeT<T>::BSTNodeT(T contents)
     right_(NULL) {
 }
 
-template<typename T>
+template<class T>
 BSTNodeT<T>::~BSTNodeT() {
   left_  = NULL;
   right_ = NULL;
 }
 
-template<typename T>
+template<class T>
 void BSTNodeT<T>::SetContents(T contents) {
   contents_ = contents;
 }
 
-template<typename T>
+template<class T>
 void BSTNodeT<T>::SetLeft(BSTNodeT* left) {
   left_ = left;
 }
 
-template<typename T>
+template<class T>
 void BSTNodeT<T>::SetRight(BSTNodeT* right) {
   right_ = right;
 }
 
-template<typename T>
+template<class T>
 void BSTNodeT<T>::IncremenCount() {
   total_added_++;
 }
 
-template<typename T>
+template<class T>
 void BSTNodeT<T>::DecrementCount() {
   total_added_--;
 }
 
-template<typename T>
+template<class T>
 T BSTNodeT<T>::GetContents() {
   return contents_;
 }
 
-template<typename T>
+template<class T>
 BSTNodeT<T>* BSTNodeT<T>::GetLeft() {
   return left_;
 }
 
-template<typename T>
+template<class T>
 BSTNodeT<T>* BSTNodeT<T>::GetRight() {
   return right_;
 }
