@@ -10,21 +10,24 @@ class BSTNodeT {
   BSTNodeT(T contents);
   virtual ~BSTNodeT();
   void SetContents(T contents);
-  void SetLeft(BSTNodeT* left);
-  void SetRight(BSTNodeT* right);
+  void SetLeft(BSTNodeT<T>* left);
+  void SetRight(BSTNodeT<T>* right);
   void IncremenCount();
   void DecrementCount();
   T GetContents();
-  BSTNodeT* GetLeft();
-  BSTNodeT* GetRight();
+  BSTNodeT<T>* GetLeft();
+  BSTNodeT<T>* GetRight();
+  BSTNodeT<T>* GetLeft() const;
+  BSTNodeT<T>* GetRight() const;
+
  private:
   T contents_;
   unsigned int total_added_;
-  BSTNodeT* left_;
-  BSTNodeT* right_;
+  BSTNodeT<T>* left_;
+  BSTNodeT<T>* right_;
 };
 
-template<class T>
+template<typename T>
 BSTNodeT<T>::BSTNodeT()
   : contents_(T()),
     total_added_(0),
@@ -32,7 +35,7 @@ BSTNodeT<T>::BSTNodeT()
     right_(NULL) {
 }
 
-template<class T>
+template<typename T>
 BSTNodeT<T>::BSTNodeT(T contents)
   : contents_(contents),
     total_added_(0),
@@ -40,49 +43,59 @@ BSTNodeT<T>::BSTNodeT(T contents)
     right_(NULL) {
 }
 
-template<class T>
+template<typename T>
 BSTNodeT<T>::~BSTNodeT() {
   left_  = NULL;
   right_ = NULL;
 }
 
-template<class T>
+template<typename T>
 void BSTNodeT<T>::SetContents(T contents) {
   contents_ = contents;
 }
 
-template<class T>
-void BSTNodeT<T>::SetLeft(BSTNodeT* left) {
+template<typename T>
+void BSTNodeT<T>::SetLeft(BSTNodeT<T>* left) {
   left_ = left;
 }
 
-template<class T>
-void BSTNodeT<T>::SetRight(BSTNodeT* right) {
+template<typename T>
+void BSTNodeT<T>::SetRight(BSTNodeT<T>* right) {
   right_ = right;
 }
 
-template<class T>
+template<typename T>
 void BSTNodeT<T>::IncremenCount() {
   total_added_++;
 }
 
-template<class T>
+template<typename T>
 void BSTNodeT<T>::DecrementCount() {
   total_added_--;
 }
 
-template<class T>
+template<typename T>
 T BSTNodeT<T>::GetContents() {
   return contents_;
 }
 
-template<class T>
+template<typename T>
 BSTNodeT<T>* BSTNodeT<T>::GetLeft() {
   return left_;
 }
 
-template<class T>
+template<typename T>
 BSTNodeT<T>* BSTNodeT<T>::GetRight() {
+  return right_;
+}
+
+template<typename T>
+BSTNodeT<T>* BSTNodeT<T>::GetLeft() const {
+  return left_;
+}
+
+template<typename T>
+BSTNodeT<T>* BSTNodeT<T>::GetRight() const {
   return right_;
 }
 
