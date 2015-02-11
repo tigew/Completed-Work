@@ -1,7 +1,7 @@
 /*
  * Name        : lab_1.cpp
  * Author      : Travis Peebles
- * Description : FILL IN
+ * Description : This is the first lab in P&A2
  */
 
 #include <iostream>
